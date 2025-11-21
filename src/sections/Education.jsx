@@ -15,7 +15,7 @@ export default function Education() {
           className="flex items-center gap-4 hover:opacity-90 transition"
         >
           <img
-            src="/public/Logo.png"
+            src="/Logo.png"
             alt="College Logo"
             className="w-14 h-14 rounded-full bg-white p-1 object-cover"
           />

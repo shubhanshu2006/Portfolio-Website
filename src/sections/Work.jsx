@@ -4,7 +4,7 @@ export default function Work() {
   const workData = [
     {
       company: "Alpha",
-      logo: "/public/Coming_Soon_Logo.jpg",
+      logo: "/Coming_Soon_Logo.jpg",
       role: "Coming Soon...",
       type: "Coming Soon...",
       dates: "--",
@@ -12,7 +12,7 @@ export default function Work() {
     },
     {
       company: "Beta",
-      logo: "/public/Coming_Soon_Logo.jpg",
+      logo: "/Coming_Soon_Logo.jpg",
       role: "Coming Soon...",
       type: "Coming Soon...",
       dates: "--",
@@ -20,7 +20,7 @@ export default function Work() {
     },
     {
       company: "Gamma",
-      logo: "/public/Coming_Soon_Logo.jpg",
+      logo: "/Coming_Soon_Logo.jpg",
       role: "Coming Soon...",
       type: "Coming Soon...",
       dates: "--",

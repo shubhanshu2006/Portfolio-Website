@@ -10,7 +10,7 @@ export default function Projects() {
       tech: ["To be added","To be added","To be added","To be added"],
       site: "#",
       repo: "#",
-      img:"/public/Coming_Soon.jpg",
+      img:"/Coming_Soon.jpg",
     },
     {
       title: "Beta",
@@ -19,7 +19,7 @@ export default function Projects() {
       tech: ["To be added","To be added","To be added","To be added"],
       site: "#",
       repo: "#",
-      img:"/public/Coming_Soon.jpg",
+      img:"/Coming_Soon.jpg",
     },
     {
       title: "Gamma",
@@ -28,7 +28,7 @@ export default function Projects() {
       tech: ["To be added","To be added","To be added","To be added"],
       site: "#",
       repo: "#",
-      img:"/public/Coming_Soon.jpg",
+      img:"/Coming_Soon.jpg",
     },
   ];
 
