@@ -93,7 +93,7 @@ export default function ProjectCard({
               shadow-sm hover:shadow-lg
             "
           >
-            <img src={Github} alt="GitHub" className="w-4 h-4" />
+            <img src={Github} alt="GitHub" className="w-4 h-4 object-contain invert dark:invert-0" />
             GitHub
           </a>
         </div>
