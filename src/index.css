@@ -196,9 +196,11 @@ body {
   width: 46px;
   height: 46px;
   border-radius: 999px;
-  background: radial-gradient(circle,
-      rgba(255, 255, 255, 0.25),
-      transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
   opacity: 0;
   filter: blur(12px);
   transform: scale(0.75);
@@ -282,4 +284,14 @@ body {
 .dark .hero-section,
 .dark .section-container {
   background-color: #000000 !important;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  body {
+    zoom: 1 !important;
+  }
 }
