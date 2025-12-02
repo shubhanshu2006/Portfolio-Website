@@ -4,13 +4,13 @@ export default function About() {
       id="about"
       className="section-container px-4 pt-4 bg-gray-100 dark:bg-black transition-colors"
     >
-      <h2 className="text-black dark:text-white text-3xl font-bold mb-4 text-center">
+      <h2 className="text-black dark:text-white text-4xl font-bold mb-4 text-center">
         About Me
       </h2>
 
       <p
         className="text-lg 
-  text-black/80 dark:text-white/70 
+  text-black dark:text-white 
   max-w-3xl mx-auto text-center 
   leading-relaxed"
       >

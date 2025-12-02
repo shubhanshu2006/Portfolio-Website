@@ -10,22 +10,6 @@ export default function Work() {
       dates: "--",
       link: "#",
     },
-    {
-      company: "Beta",
-      logo: "/Coming_Soon_Logo.jpg",
-      role: "Coming Soon...",
-      type: "Coming Soon...",
-      dates: "--",
-      link: "#",
-    },
-    {
-      company: "Gamma",
-      logo: "/Coming_Soon_Logo.jpg",
-      role: "Coming Soon...",
-      type: "Coming Soon...",
-      dates: "--",
-      link: "#",
-    },
   ];
 
   return (
@@ -33,7 +17,7 @@ export default function Work() {
       id="work"
       className="section-container px-4 bg-gray-100 dark:bg-black transition-colors"
     >
-      <h2 className="text-black dark:text-white text-3xl font-bold mb-6 text-center">
+      <h2 className="text-black dark:text-white text-4xl font-bold mb-6 text-center">
         Work Experience
       </h2>
 
@@ -43,7 +27,7 @@ export default function Work() {
             key={i}
             className="
               flex items-center justify-between p-4 rounded-lg 
-              bg-white dark:bg-white/5 border border-black/20 dark:border-white/20
+              bg-white dark:bg-black border border-black/20 dark:border-white/20
               transition-all duration-300
               hover:scale-[1.02] hover:shadow-lg hover:shadow-white/10
             "
@@ -65,8 +49,8 @@ export default function Work() {
                   target="_blank"
                   className="
                     text-lg font-semibold text-black dark:text-white 
-                    transition-all
-                    hover:text-black/80 dark:hover:text-white/80 hover:underline
+                    transition-none
+                   
                   "
                 >
                   {job.company}

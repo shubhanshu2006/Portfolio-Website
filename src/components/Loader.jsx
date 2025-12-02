@@ -18,7 +18,7 @@ export default function Loader({ onLoadComplete = () => {} }) {
     const lastMessageIndex = names.length - 1;
 
     if (currentIndex <= names.length) {
-      const delay = displayIndex === lastMessageIndex ? 1500 : 300;
+      const delay = displayIndex === lastMessageIndex ? 1000 : 450;
 
       const t = setTimeout(() => {
         setCurrentIndex((i) => i + 1);

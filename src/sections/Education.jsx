@@ -4,11 +4,11 @@ export default function Education() {
       id="education"
       className="section-container px-4 bg-gray-100 dark:bg-black transition-colors"
     >
-      <h2 className="text-black dark:text-white text-3xl font-bold mb-6 text-center">
+      <h2 className="text-black dark:text-white text-4xl font-bold mb-6 text-center">
         Education
       </h2>
 
-      <div className="max-w-4xl mx-auto bg-white dark:bg-white/5 border border-black/20 dark:border-white/20 p-6 rounded-xl flex items-center justify-between gap-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-black border border-black/20 dark:border-white/20 p-6 rounded-xl flex items-center justify-between gap-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10">
         <a
           href="https://www.rkgit.edu.in"
           target="_blank"

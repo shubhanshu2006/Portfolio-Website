@@ -16,7 +16,7 @@ export default function Skills() {
       id="skills"
       className="section-container px-4 bg-gray-100 dark:bg-black transition-colors"
     >
-      <h2 className="text-black dark:text-white text-3xl font-bold mb-4 text-center">
+      <h2 className="text-black dark:text-white text-4xl font-bold mb-5 text-center">
         Skills
       </h2>
 
@@ -25,12 +25,12 @@ export default function Skills() {
           <div
             key={i}
             className="
-              px-4 py-2.5
+              px-1 py-1
               rounded-lg
               border border-black/20 dark:border-white/20
-              bg-white dark:bg-white/5
+              bg-white dark:bg-black
               text-black dark:text-white
-              text-[15px] font-medium
+              text-[20px] font-medium
               text-center
               transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10
             "

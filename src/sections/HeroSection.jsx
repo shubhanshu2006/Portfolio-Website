@@ -39,7 +39,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="hero-section bg-white dark:bg-black transition-colors duration-300">
+    <section className="hero-section bg-white dark:bg-black ">
       <div className="hero-glow"></div>
 
       <div
@@ -49,20 +49,20 @@ export default function HeroSection() {
         <img
           src="/Profile.jpg"
           alt="Shubhanshu Singh"
-          className="photo-placeholder object-cover object-center border border-black/40 dark:border-white transition-colors"
+          className="photo-placeholder object-cover object-center border border-black/40 dark:border-white "
           style={{ marginBottom: "1.2rem" }}
         />
       </div>
 
       <h1
-        className="hero-name fade-up text-black dark:text-white transition-colors"
+        className="hero-name fade-up text-black dark:text-white "
         style={{ animationDelay: "120ms" }}
       >
         Shubhanshu Singh
       </h1>
 
       <p
-        className="hero-tag fade-up text-black/70 dark:text-white/70 transition-colors"
+        className="hero-tag fade-up text-black/10 dark:text-white "
         style={{ animationDelay: "240ms" }}
       >
         Full Stack Developer
