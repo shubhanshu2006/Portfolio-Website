@@ -140,11 +140,15 @@ export default function HeroSection() {
           </a>
 
           <a
-            href="mailto:shubhanshus450@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&to=shubhanshus450@gmail.com"
+            target="_blank"
             className="social-item"
             data-label="Mail"
           >
-            <img src={GmailIcon} className="w-6 h-6 dark:invert" />
+            <img
+              src={GmailIcon}
+              className="w-6 h-6 dark:invert cursor-pointer"
+            />
           </a>
 
           <button

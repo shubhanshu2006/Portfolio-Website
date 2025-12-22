@@ -13,7 +13,14 @@ import {
   SiCplusplus,
 } from "react-icons/si";
 import { FaDatabase, FaLock } from "react-icons/fa";
-import { Boxes, Users } from "lucide-react";
+import { Users } from "lucide-react";
+import CRUD from "../assets/CRUD.svg";
+import RestAPI from "../assets/Rest.svg";
+import Postman from "../assets/Postman.svg";
+import Vercel from "../assets/Vercel.svg";
+import VS from "../assets/VS.svg";
+import Shadcn from "../assets/Shadcn.svg";
+import Daisy from "../assets/Daisy.svg";
 
 const sections = [
   {
@@ -25,10 +32,9 @@ const sections = [
         icon: SiNextdotjs,
         color: "text-black dark:text-white",
       },
-
       { name: "TailwindCSS", icon: SiTailwindcss, color: "text-sky-400" },
-      { name: "shadcn/ui", icon: Boxes, color: "text-black dark:text-white" },
-      { name: "DaisyUI", icon: Boxes, color: "text-purple-500" },
+      { name: "shadcn/ui", icon: Shadcn, type: "svg" },
+      { name: "DaisyUI", icon: Daisy, type: "svg" },
     ],
   },
   {
@@ -36,9 +42,9 @@ const sections = [
     skills: [
       { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
       { name: "Express.js", icon: SiExpress, color: "text-gray-400" },
-      { name: "REST APIs", icon: Boxes, color: "text-cyan-400" },
+      { name: "REST APIs", icon: RestAPI, type: "svg" },
       { name: "JWT Authentication", icon: FaLock, color: "text-emerald-400" },
-      { name: "CRUD Operations", icon: Boxes, color: "text-indigo-400" },
+      { name: "CRUD Operations", icon: CRUD, type: "svg" },
     ],
   },
   {
@@ -64,9 +70,9 @@ const sections = [
     skills: [
       { name: "Git", icon: SiGit, color: "text-orange-500" },
       { name: "GitHub", icon: SiGit, color: "text-orange-500" },
-      { name: "VS Code", icon: Boxes, color: "text-blue-400" },
-      { name: "Postman", icon: Boxes, color: "text-orange-400" },
-      { name: "Vercel", icon: Boxes, color: "text-black dark:text-white" },
+      { name: "VS Code", icon: VS, type: "svg" },
+      { name: "Postman", icon: Postman, type: "svg" },
+      { name: "Vercel", icon: Vercel, type: "svg" },
     ],
   },
   {
@@ -82,12 +88,12 @@ const sections = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-4 py-12 bg-transparent ">
+    <section id="skills" className="px-4 py-12 bg-transparent">
       <h2 className="text-4xl font-bold text-center text-black dark:text-white mb-12">
         Skills
       </h2>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 ">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {sections.map((section, i) => (
           <Motion.div
             key={i}
@@ -95,44 +101,36 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="
-              rounded-2xl
-              bg-white dark:bg-black
-              border border-black/20 dark:border-white/20
-              p-6
-              transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10
-            "
+            className="rounded-2xl bg-white dark:bg-black border border-black/20 dark:border-white/20 p-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10"
           >
             <h3 className="text-xl font-semibold text-black dark:text-white mb-5 text-center">
               {section.title}
             </h3>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              {section.skills.map((skill, idx) => {
-                const Icon = skill.icon;
-                return (
-                  <Motion.div
-                    key={idx}
-                    whileHover={{
-                      y: -4,
-                      scale: 1.05,
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
-                    }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="
-                      flex items-center gap-2
-                      px-6 py-3
-                      rounded-full
-                      bg-black/10 dark:bg-white/10
-                      text-black dark:text-white
-                      text-base
-                    "
-                  >
-                    <Icon className={`text-lg ${skill.color}`} />
-                    <span className="font-medium">{skill.name}</span>
-                  </Motion.div>
-                );
-              })}
+              {section.skills.map((skill, idx) => (
+                <Motion.div
+                  key={idx}
+                  whileHover={{
+                    y: -4,
+                    scale: 1.05,
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/10 dark:bg-white/10 text-black dark:text-white text-base"
+                >
+                  {skill.type === "svg" ? (
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-5 h-5 dark:invert"
+                    />
+                  ) : (
+                    <skill.icon className={`text-lg ${skill.color}`} />
+                  )}
+                  <span className="font-medium">{skill.name}</span>
+                </Motion.div>
+              ))}
             </div>
           </Motion.div>
         ))}
