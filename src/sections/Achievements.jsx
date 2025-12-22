@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 const achievements = [
   {
-    date: "Mar 2024",
+    date: "September 2025 - October 2025",
     title: "Smart India Hackathon",
     subtitle: "College Level",
     points: [
