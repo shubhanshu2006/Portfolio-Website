@@ -112,9 +112,9 @@ export default function Education() {
                         <Calendar className="w-4 h-4 text-black/60 dark:text-white/60" />
                         <span className="text-sm font-medium text-black/70 dark:text-white/70">{edu.duration}</span>
                       </div>
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-linear-to-r from-purple-500 to-blue-500 text-white">
-                        <Award className="w-4 h-4" />
-                        <span className="text-sm font-bold">{edu.gradeType}: {edu.grade}</span>
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/10">
+                        <Award className="w-4 h-4 text-black/60 dark:text-white/60" />
+                        <span className="text-sm font-medium text-black/70 dark:text-white/70">{edu.gradeType}: {edu.grade}</span>
                       </div>
                       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400">
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />

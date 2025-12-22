@@ -62,8 +62,10 @@ export default function Portfolio() {
 
         {/* Footer */}
         <footer className="py-8 pb-24 px-4 border-t border-black/10 dark:border-white/10">
-          <p className="text-black/60 dark:text-white/60 text-sm text-center flex items-center justify-center gap-1">
-            © 2025 Shubhanshu Singh. Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> All rights reserved.
+          <p className="text-black/60 dark:text-white/60 text-sm text-center flex flex-wrap items-center justify-center gap-1">
+            <span className="whitespace-nowrap">© 2025 Shubhanshu Singh.</span>
+            <span className="whitespace-nowrap flex items-center gap-1">Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /></span>
+            <span className="whitespace-nowrap">All rights reserved.</span>
           </p>
         </footer>
       </main>
