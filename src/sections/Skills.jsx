@@ -88,16 +88,26 @@ const sections = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-4 py-12 bg-transparent">
-      <Motion.h2
+    <section id="skills" className="px-4 py-20 bg-transparent">
+      {/* Section Header */}
+      <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-4xl font-bold text-center text-black dark:text-white mb-12"
+        className="text-center mb-12"
       >
-        Skills
-      </Motion.h2>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 dark:bg-emerald-400/10 mb-4">
+          <SiReact className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+          <span className="text-sm font-medium text-emerald-500 dark:text-emerald-400">Technical Expertise</span>
+        </div>
+        <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-4">
+          Skills
+        </h2>
+        <p className="text-black/60 dark:text-white/60 text-lg max-w-2xl mx-auto">
+          Technologies and tools I use to bring ideas to life
+        </p>
+      </Motion.div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {sections.map((section, i) => (

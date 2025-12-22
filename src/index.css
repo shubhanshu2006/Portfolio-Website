@@ -126,6 +126,241 @@ body {
   color: #fff;
 }
 
+/* Full-screen Hero Section */
+.hero-section-full {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.hero-photo-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.hero-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dark .hero-photo {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
+}
+
+.hero-photo-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  animation: ringPulse 3s ease-in-out infinite;
+}
+
+.dark .hero-photo-ring {
+  border-color: rgba(147, 197, 253, 0.3);
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.hero-greeting {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0.25rem;
+}
+
+.dark .hero-greeting {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-name-large {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.dark .hero-name-large {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .hero-name-large {
+    font-size: 4rem;
+  }
+  
+  .hero-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.hero-tag-large {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #3b82f6;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.dark .hero-tag-large {
+  color: #93c5fd;
+}
+
+@media (min-width: 768px) {
+  .hero-tag-large {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.7);
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.dark .hero-description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (min-width: 768px) {
+  .hero-description {
+    font-size: 1.125rem;
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-btn-primary {
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hero-btn-primary:hover {
+  background: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark .hero-btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+.dark .hero-btn-primary:hover {
+  background: #f0f0f0;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.hero-btn-secondary {
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: transparent;
+  color: #000;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.hero-btn-secondary:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dark .hero-btn-secondary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .hero-btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.scroll-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.dark .scroll-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-arrow {
+  width: 28px;
+  height: 28px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.dark .scroll-arrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .hero-glow {
   position: absolute;
   top: 24%;
@@ -266,6 +501,11 @@ body {
 .social-item:hover::after {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+/* Scroll offset for fixed navbar */
+section[id] {
+  scroll-margin-top: 80px;
 }
 
 .section-container {

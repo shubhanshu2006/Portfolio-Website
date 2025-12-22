@@ -6,7 +6,7 @@ import LinkedinIcon from "../assets/linkedin.svg";
 import XIcon from "../assets/x.svg";
 import GmailIcon from "../assets/gmail.svg";
 
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   const [showSocials, setShowSocials] = useState(false);
@@ -40,76 +40,107 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="hero-section bg-white dark:bg-black">
-      <div className="hero-glow" />
-
-      <Motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex justify-center w-full"
-      >
-        <img
-          src="/Profile.jpg"
-          alt="Shubhanshu Singh"
-          className="photo-placeholder object-cover object-center border border-black/40 dark:border-white"
-          style={{ marginBottom: "1.2rem" }}
-        />
-      </Motion.div>
-
-      <Motion.h1
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-        className="hero-name text-black dark:text-white"
-      >
-        Shubhanshu Singh
-      </Motion.h1>
-
-      <Motion.p
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-        className="hero-tag text-black/60 dark:text-white/70"
-      >
-        Full-Stack Developer
-      </Motion.p>
-
-      <Motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.6 }}
-        className="flex gap-4 mt-8"
-      >
-        <Motion.button
-          onClick={() => {
-            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          whileHover={{
-            y: -2,
-            scale: 1.03,
-            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
-          }}
-          whileTap={{ scale: 0.97 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="px-6 py-2 rounded-md bg-black text-white dark:bg-white dark:text-black font-medium cursor-pointer"
+    <section id="home" className="hero-section-full">
+      <div className="hero-content">
+        <Motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex justify-center w-full"
         >
-          View Projects
-        </Motion.button>
+          <div className="hero-photo-wrapper">
+            <img
+              src="/Profile.jpg"
+              alt="Shubhanshu Singh"
+              className="hero-photo"
+            />
+            <div className="hero-photo-ring" />
+          </div>
+        </Motion.div>
 
-        <Motion.a
-          href="/Resume.pdf"
-          whileHover={{
-            y: -2,
-            scale: 1.03,
-            boxShadow: "0 8px 24px rgba(255,255,255,0.15)",
-          }}
-          whileTap={{ scale: 0.97 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="px-6 py-2 rounded-md border border-black/30 dark:border-white/30 text-black dark:text-white font-medium"
+        <Motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          className="hero-greeting"
         >
-          Resume
-        </Motion.a>
+          Hello, I'm
+        </Motion.p>
+
+        <Motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
+          className="hero-name-large"
+        >
+          Shubhanshu Singh
+        </Motion.h1>
+
+        <Motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          className="hero-tag-large"
+        >
+          Full-Stack Developer
+        </Motion.p>
+
+        <Motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
+          className="hero-description"
+        >
+          Building scalable web applications with modern technologies.
+          <br className="hidden md:block" />
+          Passionate about clean code and great user experiences.
+        </Motion.p>
+
+        <Motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.9 }}
+          className="hero-buttons"
+        >
+          <Motion.button
+            onClick={() => {
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            className="hero-btn-primary"
+          >
+            View Projects
+          </Motion.button>
+
+          <Motion.a
+            href="/Resume.pdf"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            className="hero-btn-secondary"
+          >
+            Resume
+          </Motion.a>
+        </Motion.div>
+      </div>
+
+      {/* Scroll indicator */}
+      <Motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="scroll-indicator"
+        onClick={() => {
+          document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+        }}
+      >
+        <span className="scroll-text">Scroll Down</span>
+        <Motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="scroll-arrow" />
+        </Motion.div>
       </Motion.div>
 
       <div className={`social-fixed ${showSocials ? "social-show" : ""}`}>

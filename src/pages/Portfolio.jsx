@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { motion as Motion } from "framer-motion";
+import { Rocket, Heart } from "lucide-react";
 import Loader from "../components/Loader";
+import Navbar from "../components/Navbar";
 import HeroSection from "../sections/HeroSection";
 import About from "../sections/About";
 import Skills from "../sections/Skills";
@@ -19,6 +22,8 @@ export default function Portfolio() {
         <AuroraBackground />
       </div>
 
+      <Navbar />
+
       <main
         className="relative min-h-screen bg-transparent dark:bg-transparent"
         style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
@@ -31,20 +36,35 @@ export default function Portfolio() {
         <Achievements />
         <Projects />
 
-        <h1 className="mb-2 text-3xl text-center bg-transparent text-black dark:bg-transparent dark:text-white">
-          This Website is still in Progress...
-        </h1>
+        {/* Work in Progress Section */}
+        <section className="py-8 px-4">
+          <Motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-3">
+              Work in Progress
+            </h2>
+            
+            <p className="text-base text-black/60 dark:text-white/60 mb-4">
+              More exciting projects and features coming soon!
+            </p>
+            
+            <div className="flex items-center justify-center gap-2 text-amber-500 dark:text-amber-400">
+              
+              <span className="text-sm font-medium">Stay tuned for updates</span>
+            </div>
+          </Motion.div>
+        </section>
 
-        <h1 className="text-2xl text-center bg-transparent text-black/90 dark:bg-transparent dark:text-white/90">
-          Projects will be added soon...
-        </h1>
-
-        <footer
-          className="py-6 pb-24 text-center 
-          bg-transparent text-black 
-          dark:bg-transparent dark:text-white"
-        >
-          © 2025 Shubhanshu Singh. All rights reserved.
+        {/* Footer */}
+        <footer className="py-8 pb-24 px-4 border-t border-black/10 dark:border-white/10">
+          <p className="text-black/60 dark:text-white/60 text-sm text-center flex items-center justify-center gap-1">
+            © 2025 Shubhanshu Singh. Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> All rights reserved.
+          </p>
         </footer>
       </main>
     </>
