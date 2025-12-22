@@ -1,14 +1,26 @@
+import { motion as Motion } from "framer-motion";
+
 export default function About() {
   return (
     <section
       id="about"
       className="section-container px-4 py-12 bg-gray-100 dark:bg-black transition-colors"
     >
-      <h2 className="text-black dark:text-white text-4xl font-bold mb-4 text-center">
+      <Motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-black dark:text-white text-4xl font-bold mb-4 text-center"
+      >
         About Me
-      </h2>
+      </Motion.h2>
 
-      <p
+      <Motion.p
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-100px" }}
+        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         className="max-w-3xl mx-auto
           text-center
           text-2xl
@@ -21,7 +33,7 @@ export default function About() {
         TypeScript, React, Node.js, and Python. I specialize in building
         scalable, maintainable applications while emphasizing clean
         architecture, performance, and reliability.
-      </p>
+      </Motion.p>
     </section>
   );
 }

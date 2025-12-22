@@ -89,9 +89,15 @@ const sections = [
 export default function Skills() {
   return (
     <section id="skills" className="px-4 py-12 bg-transparent">
-      <h2 className="text-4xl font-bold text-center text-black dark:text-white mb-12">
+      <Motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-4xl font-bold text-center text-black dark:text-white mb-12"
+      >
         Skills
-      </h2>
+      </Motion.h2>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {sections.map((section, i) => (
@@ -99,9 +105,9 @@ export default function Skills() {
             key={i}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5 }}
-            className="rounded-2xl bg-white dark:bg-black border border-black/20 dark:border-white/20 p-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10"
+            className="rounded-2xl bg-white dark:bg-black border border-black/20 dark:border-white/20 p-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10"
           >
             <h3 className="text-xl font-semibold text-black dark:text-white mb-5 text-center">
               {section.title}

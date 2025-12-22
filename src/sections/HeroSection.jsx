@@ -81,8 +81,10 @@ export default function HeroSection() {
         transition={{ duration: 0.7, delay: 0.6 }}
         className="flex gap-4 mt-8"
       >
-        <Motion.a
-          href="#projects"
+        <Motion.button
+          onClick={() => {
+            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+          }}
           whileHover={{
             y: -2,
             scale: 1.03,
@@ -90,10 +92,10 @@ export default function HeroSection() {
           }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="px-6 py-2 rounded-md bg-black text-white dark:bg-white dark:text-black font-medium"
+          className="px-6 py-2 rounded-md bg-black text-white dark:bg-white dark:text-black font-medium cursor-pointer"
         >
           View Projects
-        </Motion.a>
+        </Motion.button>
 
         <Motion.a
           href="/Resume.pdf"

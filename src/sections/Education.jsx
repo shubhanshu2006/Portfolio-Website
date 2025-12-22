@@ -1,14 +1,28 @@
+import { motion as Motion } from "framer-motion";
+
 export default function Education() {
   return (
     <section
       id="education"
       className="section-container px-4 py-16 bg-gray-100 dark:bg-black transition-colors"
     >
-      <h2 className="text-black dark:text-white text-4xl font-bold mb-6 text-center">
+      <Motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-black dark:text-white text-4xl font-bold mb-6 text-center"
+      >
         Education
-      </h2>
+      </Motion.h2>
 
-      <div className="max-w-5xl mx-auto bg-white dark:bg-black border border-black/20 dark:border-white/20 p-7 rounded-xl flex items-center justify-between gap-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10">
+      <Motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+        className="max-w-5xl mx-auto bg-white dark:bg-black border border-black/20 dark:border-white/20 p-7 rounded-xl flex items-center justify-between gap-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10"
+      >
         <a
           href="https://www.rkgit.edu.in"
           target="_blank"
@@ -39,7 +53,7 @@ export default function Education() {
             CGPA: 9.47/10
           </p>
         </div>
-      </div>
+      </Motion.div>
     </section>
   );
 }
