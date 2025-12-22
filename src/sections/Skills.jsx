@@ -1,42 +1,140 @@
-export default function Skills() {
-  const skills = [
-    "JavaScript",
-    "React",
-    "Node.js",
-    "TypeScript",
-    "Python",
-    "TailwindCSS",
-    "SQL",
-    "MongoDB",
-    "Git",
-  ];
+import { motion as Motion } from "framer-motion";
+import {
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiTypescript,
+  SiPython,
+  SiTailwindcss,
+  SiMongodb,
+  SiGit,
+  SiNextdotjs,
+  SiExpress,
+  SiCplusplus,
+} from "react-icons/si";
+import { FaDatabase, FaLock } from "react-icons/fa";
+import { Boxes, Users } from "lucide-react";
 
+const sections = [
+  {
+    title: "Frontend Development",
+    skills: [
+      { name: "React", icon: SiReact, color: "text-cyan-400" },
+      {
+        name: "Next.js",
+        icon: SiNextdotjs,
+        color: "text-black dark:text-white",
+      },
+
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "text-sky-400" },
+      { name: "shadcn/ui", icon: Boxes, color: "text-black dark:text-white" },
+      { name: "DaisyUI", icon: Boxes, color: "text-purple-500" },
+    ],
+  },
+  {
+    title: "Backend Development",
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
+      { name: "Express.js", icon: SiExpress, color: "text-gray-400" },
+      { name: "REST APIs", icon: Boxes, color: "text-cyan-400" },
+      { name: "JWT Authentication", icon: FaLock, color: "text-emerald-400" },
+      { name: "CRUD Operations", icon: Boxes, color: "text-indigo-400" },
+    ],
+  },
+  {
+    title: "Programming Languages",
+    skills: [
+      { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+      { name: "Python", icon: SiPython, color: "text-yellow-500" },
+      { name: "C++", icon: SiCplusplus, color: "text-blue-600" },
+    ],
+  },
+  {
+    title: "Databases",
+    skills: [
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
+      { name: "SQL", icon: FaDatabase, color: "text-indigo-400" },
+      { name: "Mongoose (ODM)", icon: SiMongodb, color: "text-red-500" },
+      { name: "PostgreSQL", icon: FaDatabase, color: "text-blue-500" },
+    ],
+  },
+  {
+    title: "Development Tools",
+    skills: [
+      { name: "Git", icon: SiGit, color: "text-orange-500" },
+      { name: "GitHub", icon: SiGit, color: "text-orange-500" },
+      { name: "VS Code", icon: Boxes, color: "text-blue-400" },
+      { name: "Postman", icon: Boxes, color: "text-orange-400" },
+      { name: "Vercel", icon: Boxes, color: "text-black dark:text-white" },
+    ],
+  },
+  {
+    title: "Soft Skills",
+    skills: [
+      { name: "Team Leadership", icon: Users, color: "text-pink-400" },
+      { name: "Communication", icon: Users, color: "text-indigo-400" },
+      { name: "Problem Solving", icon: Users, color: "text-emerald-400" },
+      { name: "Collaboration", icon: Users, color: "text-cyan-400" },
+    ],
+  },
+];
+
+export default function Skills() {
   return (
-    <section
-      id="skills"
-      className="section-container px-4 bg-gray-100 dark:bg-black transition-colors"
-    >
-      <h2 className="text-black dark:text-white text-4xl font-bold mb-5 text-center">
+    <section id="skills" className="px-4 py-12 bg-transparent ">
+      <h2 className="text-4xl font-bold text-center text-black dark:text-white mb-12">
         Skills
       </h2>
 
-      <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
-        {skills.map((s, i) => (
-          <div
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 ">
+        {sections.map((section, i) => (
+          <Motion.div
             key={i}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
             className="
-              px-1 py-1
-              rounded-lg
-              border border-black/20 dark:border-white/20
+              rounded-2xl
               bg-white dark:bg-black
-              text-black dark:text-white
-              text-[20px] font-medium
-              text-center
+              border border-black/20 dark:border-white/20
+              p-6
               transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10
             "
           >
-            {s}
-          </div>
+            <h3 className="text-xl font-semibold text-black dark:text-white mb-5 text-center">
+              {section.title}
+            </h3>
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              {section.skills.map((skill, idx) => {
+                const Icon = skill.icon;
+                return (
+                  <Motion.div
+                    key={idx}
+                    whileHover={{
+                      y: -4,
+                      scale: 1.05,
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="
+                      flex items-center gap-2
+                      px-6 py-3
+                      rounded-full
+                      bg-black/10 dark:bg-white/10
+                      text-black dark:text-white
+                      text-base
+                    "
+                  >
+                    <Icon className={`text-lg ${skill.color}`} />
+                    <span className="font-medium">{skill.name}</span>
+                  </Motion.div>
+                );
+              })}
+            </div>
+          </Motion.div>
         ))}
       </div>
     </section>

@@ -15,7 +15,7 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="section-container px-4 bg-gray-100 dark:bg-black transition-colors"
+      className="section-container px-4 py-16 bg-gray-100 dark:bg-black transition-colors"
     >
       <h2 className="text-black dark:text-white text-4xl font-bold mb-6 text-center">
         Work Experience

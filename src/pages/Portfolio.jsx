@@ -6,6 +6,7 @@ import Skills from "../sections/Skills";
 import Work from "../sections/Work";
 import Education from "../sections/Education";
 import Projects from "../sections/Projects";
+import Achievements from "../sections/Achievements";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export default function Portfolio() {
@@ -27,6 +28,7 @@ export default function Portfolio() {
         <Skills />
         <Work />
         <Education />
+        <Achievements />
         <Projects />
 
         <h1 className="mb-2 text-3xl text-center bg-transparent text-black dark:bg-transparent dark:text-white">

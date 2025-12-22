@@ -2,13 +2,13 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="section-container px-4 bg-gray-100 dark:bg-black transition-colors"
+      className="section-container px-4 py-16 bg-gray-100 dark:bg-black transition-colors"
     >
       <h2 className="text-black dark:text-white text-4xl font-bold mb-6 text-center">
         Education
       </h2>
 
-      <div className="max-w-4xl mx-auto bg-white dark:bg-black border border-black/20 dark:border-white/20 p-6 rounded-xl flex items-center justify-between gap-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10">
+      <div className="max-w-5xl mx-auto bg-white dark:bg-black border border-black/20 dark:border-white/20 p-7 rounded-xl flex items-center justify-between gap-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-white/10">
         <a
           href="https://www.rkgit.edu.in"
           target="_blank"

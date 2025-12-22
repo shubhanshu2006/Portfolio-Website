@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { motion as Motion } from "framer-motion";
 
 import GithubIcon from "../assets/github.svg";
 import LinkedinIcon from "../assets/linkedin.svg";
@@ -39,34 +40,75 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="hero-section bg-white dark:bg-black ">
-      <div className="hero-glow"></div>
+    <section className="hero-section bg-white dark:bg-black">
+      <div className="hero-glow" />
 
-      <div
-        className="flex justify-center w-full fade-up"
-        style={{ animationDelay: "0ms" }}
+      <Motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="flex justify-center w-full"
       >
         <img
           src="/Profile.jpg"
           alt="Shubhanshu Singh"
-          className="photo-placeholder object-cover object-center border border-black/40 dark:border-white "
+          className="photo-placeholder object-cover object-center border border-black/40 dark:border-white"
           style={{ marginBottom: "1.2rem" }}
         />
-      </div>
+      </Motion.div>
 
-      <h1
-        className="hero-name fade-up text-black dark:text-white "
-        style={{ animationDelay: "120ms" }}
+      <Motion.h1
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+        className="hero-name text-black dark:text-white"
       >
         Shubhanshu Singh
-      </h1>
+      </Motion.h1>
 
-      <p
-        className="hero-tag fade-up text-black/10 dark:text-white "
-        style={{ animationDelay: "240ms" }}
+      <Motion.p
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+        className="hero-tag text-black/60 dark:text-white/70"
       >
-        Full Stack Developer
-      </p>
+        Full-Stack Developer
+      </Motion.p>
+
+      <Motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.6 }}
+        className="flex gap-4 mt-8"
+      >
+        <Motion.a
+          href="#projects"
+          whileHover={{
+            y: -2,
+            scale: 1.03,
+            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+          }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="px-6 py-2 rounded-md bg-black text-white dark:bg-white dark:text-black font-medium"
+        >
+          View Projects
+        </Motion.a>
+
+        <Motion.a
+          href="/Resume.pdf"
+          whileHover={{
+            y: -2,
+            scale: 1.03,
+            boxShadow: "0 8px 24px rgba(255,255,255,0.15)",
+          }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="px-6 py-2 rounded-md border border-black/30 dark:border-white/30 text-black dark:text-white font-medium"
+        >
+          Resume
+        </Motion.a>
+      </Motion.div>
 
       <div className={`social-fixed ${showSocials ? "social-show" : ""}`}>
         <div className="social-bar">
@@ -76,10 +118,7 @@ export default function HeroSection() {
             className="social-item"
             data-label="GitHub"
           >
-            <img
-              src={GithubIcon}
-              className="w-6 h-6 object-contain dark:invert"
-            />
+            <img src={GithubIcon} className="w-6 h-6 dark:invert" />
           </a>
 
           <a
@@ -88,10 +127,7 @@ export default function HeroSection() {
             className="social-item"
             data-label="LinkedIn"
           >
-            <img
-              src={LinkedinIcon}
-              className="w-6 h-6 object-contain dark:invert"
-            />
+            <img src={LinkedinIcon} className="w-6 h-6 dark:invert" />
           </a>
 
           <a
@@ -100,19 +136,15 @@ export default function HeroSection() {
             className="social-item"
             data-label="X"
           >
-            <img src={XIcon} className="w-6 h-6 object-contain dark:invert" />
+            <img src={XIcon} className="w-6 h-6 dark:invert" />
           </a>
 
           <a
             href="mailto:shubhanshus450@gmail.com"
-            target="_blank"
             className="social-item"
             data-label="Mail"
           >
-            <img
-              src={GmailIcon}
-              className="w-6 h-6 object-contain dark:invert"
-            />
+            <img src={GmailIcon} className="w-6 h-6 dark:invert" />
           </a>
 
           <button

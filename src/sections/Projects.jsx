@@ -7,34 +7,34 @@ export default function Projects() {
       title: "Alpha",
       year: "2025",
       desc: "To be added soon...",
-      tech: ["To be added","To be added","To be added","To be added"],
+      tech: ["To be added", "To be added", "To be added", "To be added"],
       site: "#",
       repo: "#",
-      img:"/Coming_Soon.jpg",
+      img: "/Coming_Soon.jpg",
     },
     {
       title: "Beta",
       year: "2025",
       desc: "To be added soon...",
-      tech: ["To be added","To be added","To be added","To be added"],
+      tech: ["To be added", "To be added", "To be added", "To be added"],
       site: "#",
       repo: "#",
-      img:"/Coming_Soon.jpg",
+      img: "/Coming_Soon.jpg",
     },
     {
       title: "Gamma",
       year: "2025",
       desc: "To be added soon...",
-      tech: ["To be added","To be added","To be added","To be added"],
+      tech: ["To be added", "To be added", "To be added", "To be added"],
       site: "#",
       repo: "#",
-      img:"/Coming_Soon.jpg",
+      img: "/Coming_Soon.jpg",
     },
   ];
 
   return (
     <section id="projects" className="section-container px-4">
-      <h2 className="text-black dark:text-white text-4xl font-bold mb-6 text-center">
+      <h2 className="text-black dark:text-white text-4xl font-bold mb-8 text-center">
         Projects
       </h2>
 
