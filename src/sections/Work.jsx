@@ -12,17 +12,13 @@ export default function Work() {
       dates: "Coming Soon",
       location: "Remote / On-site",
       link: "#",
-      description: "Exciting opportunity coming soon. Stay tuned for updates on my professional journey.",
-      skills: ["React", "Node.js", "TypeScript"],
+      description: "Stay tuned for updates on my professional journey.",
+      skills: ["Coming Soon", "Coming Soon", "Coming Soon"],
     },
   ];
 
   return (
-    <section
-      id="work"
-      className="section-container px-4 py-20 bg-transparent"
-    >
-      {/* Section Header */}
+    <section id="work" className="section-container px-4 py-20 bg-transparent">
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +28,9 @@ export default function Work() {
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-400/10 mb-4">
           <Briefcase className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-          <span className="text-sm font-medium text-blue-500 dark:text-blue-400">Career</span>
+          <span className="text-sm font-medium text-blue-500 dark:text-blue-400">
+            Career
+          </span>
         </div>
         <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-4">
           Work Experience
@@ -42,11 +40,13 @@ export default function Work() {
         </p>
       </Motion.div>
 
-      {/* Timeline */}
       <div className="max-w-4xl mx-auto relative">
-        {/* Timeline line */}
-        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-blue-500 via-indigo-500 to-purple-500 hidden md:block" />
-        
+        <Motion.div
+          animate={{ opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 6, repeat: Infinity }}
+          className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-blue-500 via-indigo-500 to-purple-500 hidden md:block"
+        />
+
         {workData.map((job, i) => (
           <Motion.div
             key={i}
@@ -58,31 +58,44 @@ export default function Work() {
               i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
-            {/* Timeline dot */}
-            <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-linear-to-r from-blue-500 to-indigo-500 border-4 border-white dark:border-zinc-900 transform -translate-x-1/2 hidden md:block z-10 shadow-lg shadow-blue-500/30" />
-            
-            {/* Card */}
-            <div className={`w-full md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
+            <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-linear-to-r from-blue-500 to-indigo-500 border-4 border-white dark:border-zinc-900 transform -translate-x-1/2 hidden md:block z-10 shadow-lg shadow-blue-500/50" />
+
+            <div
+              className={`w-full md:w-[calc(50%-2rem)] ${
+                i % 2 === 0 ? "md:pr-8" : "md:pl-8"
+              }`}
+            >
               <Motion.div
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
                 className="relative group"
               >
-                {/* Glow effect */}
-                <div className="absolute -inset-1 bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                
-                <div className="relative bg-white dark:bg-zinc-900 rounded-2xl p-6 border border-black/10 dark:border-white/10 shadow-xl shadow-black/5 dark:shadow-black/20">
-                  {/* Header */}
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative">
-                      <img
-                        src={job.logo}
-                        alt={job.company}
-                        className="w-16 h-16 rounded-xl object-cover border-2 border-black/10 dark:border-white/10"
-                      />
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white dark:border-zinc-900" />
-                    </div>
-                    
+                <Motion.div
+                  animate={{ opacity: [0.1, 0.25, 0.1] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="absolute -inset-1 bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-2xl blur opacity-20"
+                />
+
+                <div className="relative bg-white dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 rounded-2xl p-6 border border-black/10 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/30 overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-bl from-blue-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/4" />
+                  
+                  <div className="relative flex items-start gap-4 mb-4">
+                    <Motion.div
+                      whileHover={{ scale: 1.1, rotate: -5 }}
+                      transition={{ duration: 0.2 }}
+                      className="relative"
+                    >
+                      <div className="w-16 h-16 rounded-xl bg-linear-to-br from-blue-500 to-indigo-500 p-0.5 shadow-lg shadow-blue-500/30">
+                        <div className="w-full h-full rounded-xl bg-white flex items-center justify-center overflow-hidden">
+                          <img
+                            src={job.logo}
+                            alt={job.company}
+                            className="w-14 h-14 object-cover"
+                          />
+                        </div>
+                      </div>
+                    </Motion.div>
+
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
                         <h3 className="text-xl font-bold text-black dark:text-white">
@@ -91,46 +104,44 @@ export default function Work() {
                         <a
                           href={job.link}
                           target="_blank"
-                          className="text-black/40 dark:text-white/40 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                          className="text-black/40 dark:text-white/40 hover:text-blue-500 dark:hover:text-blue-400 transition-all hover:scale-110"
                         >
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       </div>
-                      <p className="text-lg font-semibold text-blue-500 dark:text-blue-400">
+                      <p className="text-lg font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
                         {job.role}
                       </p>
                     </div>
                   </div>
 
-                  {/* Meta info */}
-                  <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-black/60 dark:text-white/60">
-                    <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap items-center gap-3 mb-4 text-sm text-black/60 dark:text-white/60">
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/5 dark:bg-white/10">
                       <Calendar className="w-4 h-4" />
                       <span>{job.dates}</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/5 dark:bg-white/10">
                       <MapPin className="w-4 h-4" />
                       <span>{job.location}</span>
                     </div>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-linear-to-r from-blue-500 to-indigo-500 text-white">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-linear-to-r from-blue-500 to-indigo-500 text-white shadow-lg shadow-blue-500/30">
                       {job.type}
                     </span>
                   </div>
 
-                  {/* Description */}
                   <p className="text-black/70 dark:text-white/70 mb-4 leading-relaxed">
                     {job.description}
                   </p>
 
-                  {/* Skills */}
                   <div className="flex flex-wrap gap-2">
                     {job.skills.map((skill, idx) => (
-                      <span
+                      <Motion.span
                         key={idx}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-black/5 dark:bg-white/10 text-black/70 dark:text-white/70"
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-linear-to-r from-blue-500/20 to-indigo-500/20 text-blue-700 dark:text-blue-300 border border-blue-300/50 dark:border-blue-700/50"
                       >
                         {skill}
-                      </span>
+                      </Motion.span>
                     ))}
                   </div>
                 </div>

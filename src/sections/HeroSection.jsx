@@ -6,7 +6,7 @@ import LinkedinIcon from "../assets/linkedin.svg";
 import XIcon from "../assets/x.svg";
 import GmailIcon from "../assets/gmail.svg";
 
-import { Sun, Moon, ChevronDown } from "lucide-react";
+import { Sun, Moon, ChevronDown, Rocket } from "lucide-react";
 
 export default function HeroSection() {
   const [showSocials, setShowSocials] = useState(false);
@@ -43,12 +43,12 @@ export default function HeroSection() {
     <section id="home" className="hero-section-full">
       <div className="hero-content">
         <Motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex justify-center w-full"
         >
-          <div className="hero-photo-wrapper">
+          <div className="hero-photo-wrapper mt-0">
             <img
               src="/Profile.jpg"
               alt="Shubhanshu Singh"
@@ -62,16 +62,16 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="hero-greeting"
+          className="hero-greeting text-lg md:text-xl text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-500 dark:from-blue-400 dark:to-cyan-400 mb-0"
         >
-          Hello, I'm
+          Hey there! 👋 I'm
         </Motion.p>
 
         <Motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-          className="hero-name-large"
+          className="hero-name-large text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 mb-0"
         >
           Shubhanshu Singh
         </Motion.h1>
@@ -80,7 +80,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="hero-tag-large"
+          className="hero-tag-large text-2xl md:text-3xl font-bold text-black dark:text-white -mb-40"
         >
           Full-Stack Developer
         </Motion.p>
@@ -89,7 +89,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
-          className="hero-description"
+          className="hero-description text-lg md:text-xl text-black/70 dark:text-white/70 leading-relaxed max-w-2xl -mb-20"
         >
           Building scalable web applications with modern technologies.
           <br className="hidden md:block" />
@@ -100,38 +100,74 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.9 }}
-          className="hero-buttons"
+          className="hero-buttons flex gap-4 flex-wrap"
         >
           <Motion.button
             onClick={() => {
-              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="hero-btn-primary"
+            initial={{ y: 0 }}
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.98, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 180,
+              damping: 18,
+              mass: 0.6,
+            }}
+            className="relative group px-8 py-4 rounded-xl font-semibold text-white bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/50 transition-shadow duration-300 will-change-transform overflow-hidden"
           >
-            View Projects
+           
+            <div className="absolute -inset-1 rounded-xl bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 opacity-0 blur-lg group-hover:opacity-40 transition-opacity duration-300" />{" "}
+            <div className="absolute inset-0 bg-linear-to-r from-blue-700 via-indigo-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />{" "}
+            <span className="relative flex items-center gap-2">
+              
+              View Projects
+            </span>
           </Motion.button>
-
           <Motion.a
             href="/Resume.pdf"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="hero-btn-secondary"
+            initial={{ y: 0 }}
+            whileHover={{
+              scale: 1.05,
+              y: -4,
+            }}
+            whileTap={{
+              scale: 0.98,
+              y: 0,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 22,
+              mass: 0.5,
+            }}
+            className="px-8 py-4 rounded-xl font-semibold 
+    text-black dark:text-white 
+    bg-white/10 dark:bg-white/5 
+    border-2 border-black/20 dark:border-white/20 
+    hover:border-black/50 dark:hover:border-white/50 
+    hover:bg-white/20 dark:hover:bg-white/10 
+    backdrop-blur-sm
+    transition-colors duration-300
+    will-change-transform"
           >
-            Resume
+            Download Resume
           </Motion.a>
         </Motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <Motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
         className="scroll-indicator"
         onClick={() => {
-          document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+          document
+            .getElementById("about")
+            ?.scrollIntoView({ behavior: "smooth" });
         }}
       >
         <span className="scroll-text">Scroll Down</span>

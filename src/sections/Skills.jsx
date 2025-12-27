@@ -89,7 +89,6 @@ const sections = [
 export default function Skills() {
   return (
     <section id="skills" className="px-4 py-20 bg-transparent">
-      {/* Section Header */}
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +98,9 @@ export default function Skills() {
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 dark:bg-emerald-400/10 mb-4">
           <SiReact className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
-          <span className="text-sm font-medium text-emerald-500 dark:text-emerald-400">Technical Expertise</span>
+          <span className="text-sm font-medium text-emerald-500 dark:text-emerald-400">
+            Technical Expertise
+          </span>
         </div>
         <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-4">
           Skills
@@ -117,36 +118,45 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5 }}
-            className="rounded-2xl bg-white dark:bg-black border border-black/20 dark:border-white/20 p-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10"
+            className="relative group"
           >
-            <h3 className="text-xl font-semibold text-black dark:text-white mb-5 text-center">
-              {section.title}
-            </h3>
+            <div className="absolute -inset-1 bg-linear-to-r from-purple-500 via-pink-500 to-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              {section.skills.map((skill, idx) => (
-                <Motion.div
-                  key={idx}
-                  whileHover={{
-                    y: -4,
-                    scale: 1.05,
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/10 dark:bg-white/10 text-black dark:text-white text-base"
-                >
-                  {skill.type === "svg" ? (
-                    <img
-                      src={skill.icon}
-                      alt={skill.name}
-                      className="w-5 h-5 dark:invert"
-                    />
-                  ) : (
-                    <skill.icon className={`text-lg ${skill.color}`} />
-                  )}
-                  <span className="font-medium">{skill.name}</span>
-                </Motion.div>
-              ))}
+            <div className="relative rounded-2xl bg-white dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 border border-black/10 dark:border-white/10 p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-black/15 dark:hover:shadow-white/10 overflow-hidden group">
+              <div className="absolute inset-0 bg-linear-to-br from-transparent to-black/2 dark:to-white/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-bl from-purple-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-linear-to-tr from-blue-500/10 to-transparent rounded-full translate-y-1/2 -translate-x-1/4" />
+
+              <h3 className="relative text-xl font-bold text-black dark:text-white mb-5 text-center">
+                {section.title}
+              </h3>
+
+              <div className="relative flex flex-wrap gap-3 justify-center">
+                {section.skills.map((skill, idx) => (
+                  <Motion.div
+                    key={idx}
+                    whileHover={{
+                      y: -4,
+                      scale: 1.04,
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/10 dark:bg-white/10 text-black dark:text-white text-base"
+                  >
+                    {skill.type === "svg" ? (
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        className="w-5 h-5 dark:invert"
+                      />
+                    ) : (
+                      <skill.icon className={`text-lg ${skill.color}`} />
+                    )}
+                    <span className="font-medium">{skill.name}</span>
+                  </Motion.div>
+                ))}
+              </div>
             </div>
           </Motion.div>
         ))}

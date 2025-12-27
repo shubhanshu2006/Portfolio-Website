@@ -116,7 +116,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2.4rem;
+  padding-top: 0;
   text-align: center;
   transition: background 0.25s ease, color 0.25s ease;
 }
@@ -126,7 +126,6 @@ body {
   color: #fff;
 }
 
-/* Full-screen Hero Section */
 .hero-section-full {
   min-height: 100vh;
   width: 100%;
@@ -137,6 +136,8 @@ body {
   justify-content: center;
   overflow: hidden;
   background: transparent;
+  padding-top: 1rem;
+  margin-top: -2rem;
 }
 
 .hero-content {
@@ -146,13 +147,13 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 0 1rem;
   max-width: 800px;
 }
 
 .hero-photo-wrapper {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-photo {
@@ -184,7 +185,8 @@ body {
 }
 
 @keyframes ringPulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.5;
   }
@@ -198,7 +200,7 @@ body {
   font-size: 1.125rem;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .dark .hero-greeting {
@@ -221,7 +223,7 @@ body {
   .hero-name-large {
     font-size: 4rem;
   }
-  
+
   .hero-photo {
     width: 150px;
     height: 150px;
@@ -233,7 +235,7 @@ body {
   font-weight: 600;
   color: #3b82f6;
   letter-spacing: 0.02em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .dark .hero-tag-large {
@@ -251,7 +253,7 @@ body {
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.7);
   max-width: 500px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .dark .hero-description {
@@ -645,3 +647,29 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    .hero-section-full {
+      min-height: auto;
+      padding-top: 1rem;
+      max-width: 100%;
+      margin-top: 5rem;
+      height: auto;
+      justify-content: flex-start;
+      padding-top: 1.2rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .hero-content {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+

@@ -36,7 +36,6 @@ export default function Portfolio() {
         <Achievements />
         <Projects />
 
-        {/* Work in Progress Section */}
         <section className="py-8 px-4">
           <Motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -44,29 +43,34 @@ export default function Portfolio() {
             viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-3">
-              Work in Progress
-            </h2>
-            
-            <p className="text-base text-black/60 dark:text-white/60 mb-4">
-              More exciting projects and features coming soon!
-            </p>
-            
-            <div className="flex items-center justify-center gap-2 text-amber-500 dark:text-amber-400">
-              
-              <span className="text-sm font-medium">Stay tuned for updates</span>
-            </div>
-          </Motion.div>
+          ></Motion.div>
         </section>
 
-        {/* Footer */}
-        <footer className="py-8 pb-24 px-4 border-t border-black/10 dark:border-white/10">
-          <p className="text-black/60 dark:text-white/60 text-sm text-center flex flex-wrap items-center justify-center gap-1">
-            <span className="whitespace-nowrap">© 2025 Shubhanshu Singh.</span>
-            <span className="whitespace-nowrap flex items-center gap-1">Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /></span>
-            <span className="whitespace-nowrap">All rights reserved.</span>
-          </p>
+        <footer className="py-12 pb-24 -mt-16 px-4 border-t border-black/10 dark:border-white/10 bg-linear-to-t from-black/5 dark:from-white/5 to-transparent">
+          <Motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <p className="text-black/70 dark:text-white/70 text-base font-medium flex flex-wrap items-center justify-center gap-2 mb-4">
+              <span className="whitespace-nowrap">
+                © 2025 Shubhanshu Singh.
+              </span>
+              <span className="whitespace-nowrap flex items-center gap-1.5">
+                Made with{" "}
+                <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
+              </span>
+              <span className="whitespace-nowrap">All rights reserved.</span>
+            </p>
+            <Motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-black/50 dark:text-white/50 text-sm"
+            ></Motion.p>
+          </Motion.div>
         </footer>
       </main>
     </>

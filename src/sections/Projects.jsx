@@ -6,13 +6,20 @@ import ProjectCard from "../components/ProjectCard";
 export default function Projects() {
   const projects = [
     {
-      title: "Alpha",
+      title: "VideoTube",
       year: "2025",
-      desc: "To be added soon...",
-      tech: ["To be added", "To be added", "To be added", "To be added"],
-      site: "#",
-      repo: "#",
-      img: "/Coming_Soon.jpg",
+      desc: "A full-stack video sharing platform built to demonstrate authentication, secure cookies, JWT-based sessions, and scalable backend design.",
+      tech: [
+        "NodeJs",
+        "React",
+        "Express",
+        "MongoDB",
+        "TypeScript",
+        "TailwindCSS",
+      ],
+      site: "https://video-tube-self.vercel.app/",
+      repo: "https://github.com/shubhanshu2006/Video_Tube",
+      img: "Project_VideoTube.png",
       featured: true,
     },
     {
@@ -61,8 +68,10 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="section-container px-4 py-20 bg-transparent">
-      {/* Section Header */}
+    <section
+      id="projects"
+      className="section-container px-4 py-20 bg-transparent"
+    >
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -70,9 +79,11 @@ export default function Projects() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-16"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/10 dark:bg-white/10 mb-4">
-          <FolderGit2 className="w-4 h-4 text-black/70 dark:text-white/70" />
-          <span className="text-sm font-medium text-black/70 dark:text-white/70">My Work</span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 dark:bg-amber-400/10 mb-4">
+          <FolderGit2 className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+          <span className="text-sm font-medium text-amber-600 dark:text-amber-400">
+            My Work
+          </span>
         </div>
         <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-4">
           Projects
@@ -82,7 +93,6 @@ export default function Projects() {
         </p>
       </Motion.div>
 
-      {/* Projects Grid */}
       <div className="max-w-6xl mx-auto">
         <Motion.div
           variants={containerVariants}
@@ -98,22 +108,29 @@ export default function Projects() {
           ))}
         </Motion.div>
 
-        {/* View More Button */}
         <Motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ delay: 0.5 }}
-          className="flex justify-center mt-12"
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex justify-center mt-16"
         >
-          <a
+          <Motion.a
             href="https://github.com/shubhanshu2006"
             target="_blank"
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-black dark:bg-white text-white dark:text-black font-semibold shadow-xl shadow-black/10 dark:shadow-white/10 hover:shadow-black/20 dark:hover:shadow-white/20 hover:scale-[1.02] transition-all duration-300"
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{
+              type: "spring",
+              stiffness: 180,
+              damping: 18,
+              mass: 0.6,
+            }}
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-linear-to-r from-gray-900 to-black dark:from-white dark:to-gray-100 text-white dark:text-black font-bold shadow-xl shadow-black/30 dark:shadow-white/20 hover:shadow-black/50 dark:hover:shadow-white/40 "
           >
-            <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-            View More on GitHub
-          </a>
+            <Rocket className="w-5 h-5 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
+            <span>View More on GitHub</span>
+          </Motion.a>
         </Motion.div>
       </div>
     </section>

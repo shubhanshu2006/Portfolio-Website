@@ -55,15 +55,21 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "py-3" : "py-4"
+          "py-4"
         }`}
       >
         <div className="max-w-6xl mx-auto px-4">
-          <div className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 ${
-            isScrolled
-              ? "bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20"
-              : "bg-transparent"
-          }`}>
+          <div
+            className={`flex items-center justify-between px-6 py-3 rounded-full
+  transition-[background-color,backdrop-filter,box-shadow]
+  duration-500 ease-out
+  will-change-[background-color,backdrop-filter]
+  ${
+    isScrolled
+      ? "bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md shadow-lg shadow-black/10 dark:shadow-black/30"
+      : "bg-transparent"
+  }`}
+          >
             {/* Logo */}
             <Motion.a
               href="#home"
@@ -101,7 +107,11 @@ export default function Navbar() {
                     <Motion.div
                       layoutId="activeNavSection"
                       className="absolute inset-0 bg-linear-to-r from-blue-500 to-indigo-500 rounded-full -z-10"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30,
+                      }}
                     />
                   )}
                   {link.name}
