@@ -24,7 +24,7 @@ export default function Projects() {
     },
     {
       title: "Beta",
-      year: "2025",
+      year: "--",
       desc: "To be added soon...",
       tech: ["To be added", "To be added", "To be added", "To be added"],
       site: "#",
@@ -34,7 +34,7 @@ export default function Projects() {
     },
     {
       title: "Gamma",
-      year: "2025",
+      year: "--",
       desc: "To be added soon...",
       tech: ["To be added", "To be added", "To be added", "To be added"],
       site: "#",
@@ -107,6 +107,16 @@ export default function Projects() {
             </Motion.div>
           ))}
         </Motion.div>
+
+        <Motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center text-black/80 dark:text-white/80 text-3xl mt-14 font-medium"
+        >
+          More projects will be added soon...
+        </Motion.p>
 
         <Motion.div
           initial={{ opacity: 0, y: 30 }}

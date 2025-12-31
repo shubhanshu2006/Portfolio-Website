@@ -14,8 +14,7 @@ export default function Education() {
       logo: "/Logo.png",
       degree: "B.Tech — Computer Science and Engineering",
       duration: "2024 - 2028",
-      grade: "9.47",
-      gradeType: "CGPA",
+
       status: "Currently Pursuing",
       link: "https://www.rkgit.edu.in",
       highlights: [
@@ -120,20 +119,7 @@ export default function Education() {
                           {edu.duration}
                         </span>
                       </Motion.div>
-                      <Motion.div
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20,
-                        }}
-                        className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-linear-to-r from-amber-500/20 to-orange-500/20 border border-amber-300/50 dark:border-amber-700/50"
-                      >
-                        <Award className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                        <span className="text-sm font-semibold text-amber-700 dark:text-amber-300">
-                          {edu.gradeType}: {edu.grade}
-                        </span>
-                      </Motion.div>
+
                       <Motion.div
                         whileHover={{ scale: 1.05, y: -2 }}
                         transition={{

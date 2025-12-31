@@ -56,7 +56,7 @@ export default function Portfolio() {
           >
             <p className="text-black/70 dark:text-white/70 text-base font-medium flex flex-wrap items-center justify-center gap-2 mb-4">
               <span className="whitespace-nowrap">
-                © 2025 Shubhanshu Singh.
+                © 2025-Present • Shubhanshu Singh •
               </span>
               <span className="whitespace-nowrap flex items-center gap-1.5">
                 Made with{" "}
