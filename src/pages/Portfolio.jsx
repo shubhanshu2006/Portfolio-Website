@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion as Motion } from "framer-motion";
-import { Rocket, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import HeroSection from "../sections/HeroSection";

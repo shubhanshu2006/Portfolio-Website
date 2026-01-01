@@ -154,7 +154,7 @@ export default function HeroSection() {
     transition-colors duration-300
     will-change-transform"
           >
-            Download Resume
+            View Resume
           </Motion.a>
         </Motion.div>
       </div>

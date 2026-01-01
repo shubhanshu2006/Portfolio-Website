@@ -45,14 +45,10 @@ export default function About() {
             <div className="relative">
               <p className="text-lg md:text-xl leading-relaxed text-black/80 dark:text-white/80 font-medium">
                 I am a{" "}
-                <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
-                  Computer Science and Engineering
-                </span>{" "}
-                student and{" "}
                 <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
-                  full-stack developer
+                  Full-Stack Developer
                 </span>{" "}
-                with practical experience in modern web technologies such as {" "}
+                with practical experience in modern web technologies such as{" "}
                 <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
                   JavaScript, TypeScript, React, Node.js, NextJs and Python.
                 </span>{" "}
