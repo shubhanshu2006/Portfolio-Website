@@ -24,10 +24,22 @@ const getLastYearDays = (days) => {
 
 const getCurrentStreak = (days) => {
   let streak = 0;
+  const today = new Date().toISOString().slice(0, 10);
 
-  for (let i = days.length - 1; i >= 0; i--) {
-    if (days[i].count > 0) streak++;
-    else break;
+  const sortedDays = [...days].sort(
+    (a, b) => new Date(a.date) - new Date(b.date)
+  );
+
+  for (let i = sortedDays.length - 1; i >= 0; i--) {
+    const day = sortedDays[i];
+
+    if (day.date === today && day.count === 0) continue;
+
+    if (day.count > 0) {
+      streak++;
+    } else {
+      break;
+    }
   }
 
   return streak;
@@ -62,15 +74,22 @@ function StatCard({ icon: Icon, label, value, bgColor, delay = 0 }) {
     >
       <div className="relative overflow-hidden rounded-3xl border border-black/5 dark:border-white/10 bg-zinc-900/90 dark:bg-zinc-900/40 backdrop-blur-2xl p-8 transition-all duration-500 group-hover:border-black/10 dark:group-hover:border-white/20 group-hover:bg-black dark:group-hover:bg-zinc-900/60 shadow-2xl shadow-black/20 dark:shadow-black/50">
         <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] pointer-events-none" />
-        <div className={`absolute inset-0 opacity-30 dark:opacity-20 transition-opacity duration-500 group-hover:opacity-40 dark:group-hover:opacity-30 ${bgColor} blur-3xl -z-10`} />
-        
+        <div
+          className={`absolute inset-0 opacity-30 dark:opacity-20 transition-opacity duration-500 group-hover:opacity-40 dark:group-hover:opacity-30 ${bgColor} blur-3xl -z-10`}
+        />
+
         <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/10 dark:via-white/20 to-transparent" />
-        
+
         <div className="flex flex-col items-center gap-6">
           <div className="relative">
-            <div className={`absolute inset-0 blur-2xl opacity-40 dark:opacity-50 ${bgColor}`} />
+            <div
+              className={`absolute inset-0 blur-2xl opacity-40 dark:opacity-50 ${bgColor}`}
+            />
             <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
-              <Icon className="w-5 h-5 text-white/90 dark:text-white/80" strokeWidth={1.5} />
+              <Icon
+                className="w-5 h-5 text-white/90 dark:text-white/80"
+                strokeWidth={1.5}
+              />
             </div>
           </div>
 
