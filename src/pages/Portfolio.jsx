@@ -3,6 +3,10 @@ import { motion as Motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
+import ScrollProgress from "../components/ScrollProgress";
+import BackToTop from "../components/BackToTop";
+import CommandPalette from "../components/CommandPalette";
+import GitHubStats from "../components/GitHubStats";
 import HeroSection from "../sections/HeroSection";
 import About from "../sections/About";
 import Skills from "../sections/Skills";
@@ -22,9 +26,14 @@ export default function Portfolio() {
         <AuroraBackground />
       </div>
 
+      <ScrollProgress />
       <Navbar />
+      <CommandPalette />
+      <BackToTop />
 
       <main
+        id="main-content"
+        role="main"
         className="relative min-h-screen bg-transparent dark:bg-transparent"
         style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
       >
@@ -35,6 +44,7 @@ export default function Portfolio() {
         <Education />
         <Achievements />
         <Projects />
+        <GitHubStats />
 
         <section className="py-8 px-4">
           <Motion.div

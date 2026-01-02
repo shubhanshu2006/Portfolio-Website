@@ -55,6 +55,7 @@ export default function ProjectCard({
             <img
               src={img}
               alt={title}
+              loading="lazy"
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
             />
           </div>

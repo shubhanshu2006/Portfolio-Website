@@ -26,7 +26,6 @@ export default function Achievements() {
       id="achievements"
       className="section-container px-4 py-20 bg-transparent"
     >
-      {/* Header */}
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,9 +49,7 @@ export default function Achievements() {
         </p>
       </Motion.div>
 
-      {/* Timeline */}
       <div className="max-w-4xl mx-auto relative">
-        {/* CENTER LINE — SAME AS WORK */}
         <Motion.div
           animate={{ opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 6, repeat: Infinity }}
@@ -71,7 +68,6 @@ export default function Achievements() {
               i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
-            {/* DOT — EXACT SAME POSITION */}
             <div
               className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full 
               bg-linear-to-r from-blue-500 to-indigo-500 
@@ -80,7 +76,6 @@ export default function Achievements() {
               shadow-lg shadow-blue-500/50"
             />
 
-            {/* CARD WRAPPER */}
             <div
               className={`w-full md:w-[calc(50%-2rem)] ${
                 i % 2 === 0 ? "md:pr-8" : "md:pl-8"
@@ -91,7 +86,6 @@ export default function Achievements() {
                 transition={{ duration: 0.2 }}
                 className="relative group"
               >
-                {/* GLOW — SAME SPEED */}
                 <Motion.div
                   animate={{ opacity: [0.1, 0.25, 0.1] }}
                   transition={{ duration: 4, repeat: Infinity }}
@@ -100,7 +94,6 @@ export default function Achievements() {
                   rounded-2xl blur opacity-20"
                 />
 
-                {/* CARD */}
                 <div
                   className="relative bg-white 
                   dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion as Motion } from "framer-motion";
+import TypingAnimation from "../components/TypingAnimation";
 
 import GithubIcon from "../assets/github.svg";
 import LinkedinIcon from "../assets/linkedin.svg";
 import XIcon from "../assets/x.svg";
 import GmailIcon from "../assets/gmail.svg";
 
-import { Sun, Moon, ChevronDown, Rocket } from "lucide-react";
+import { Sun, Moon, ChevronDown, Rocket, Download } from "lucide-react";
 
 export default function HeroSection() {
   const [showSocials, setShowSocials] = useState(false);
@@ -80,9 +81,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="hero-tag-large text-2xl md:text-3xl font-bold text-black dark:text-white -mb-40"
+          className="hero-tag-large text-2xl md:text-3xl font-bold -mb-40"
         >
-          Full-Stack Developer
+          <TypingAnimation />
         </Motion.p>
 
         <Motion.p
@@ -129,30 +130,18 @@ export default function HeroSection() {
           </Motion.button>
           <Motion.a
             href="/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ y: 0 }}
-            whileHover={{
-              scale: 1.05,
-              y: -4,
-            }}
-            whileTap={{
-              scale: 0.98,
-              y: 0,
-            }}
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.98, y: 0 }}
             transition={{
               type: "spring",
               stiffness: 260,
               damping: 22,
               mass: 0.5,
             }}
-            className="px-8 py-4 rounded-xl font-semibold 
-    text-black dark:text-white 
-    bg-white/10 dark:bg-white/5 
-    border-2 border-black/20 dark:border-white/20 
-    hover:border-black/50 dark:hover:border-white/50 
-    hover:bg-white/20 dark:hover:bg-white/10 
-    backdrop-blur-sm
-    transition-colors duration-300
-    will-change-transform"
+            className="px-8 py-4 rounded-xl font-semibold text-black dark:text-white bg-white/10 dark:bg-white/5 border-2 border-black/20 dark:border-white/20 hover:border-black/50 dark:hover:border-white/50 hover:bg-white/20 dark:hover:bg-white/10 backdrop-blur-sm transition-colors duration-300 will-change-transform"
           >
             View Resume
           </Motion.a>

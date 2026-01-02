@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Education", href: "#education" },
   { name: "Achievements", href: "#achievements" },
   { name: "Projects", href: "#projects" },
+  { name: "GitHub", href: "#github" },
 ];
 
 export default function Navbar() {
@@ -21,7 +22,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Determine active section
       const sections = navLinks.map((link) => link.href.substring(1));
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
@@ -54,23 +54,16 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          "py-4"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${"py-4"}`}
       >
         <div className="max-w-6xl mx-auto px-4">
           <div
-            className={`flex items-center justify-between px-6 py-3 rounded-full
-  transition-[background-color,backdrop-filter,box-shadow]
-  duration-500 ease-out
-  will-change-[background-color,backdrop-filter]
-  ${
-    isScrolled
-      ? "bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md shadow-lg shadow-black/10 dark:shadow-black/30"
-      : "bg-transparent"
-  }`}
+            className={`flex items-center justify-between px-6 py-3 rounded-full transition-[background-color,backdrop-filter,box-shadow] duration-500 ease-out will-change-[background-color,backdrop-filter] ${
+              isScrolled
+                ? "bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md shadow-lg shadow-black/10 dark:shadow-black/30"
+                : "bg-transparent"
+            }`}
           >
-            {/* Logo */}
             <Motion.a
               href="#home"
               onClick={(e) => {
@@ -89,8 +82,7 @@ export default function Navbar() {
               <div className="absolute -inset-1 bg-linear-to-br from-blue-500 via-indigo-500 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300 -z-10" />
             </Motion.a>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-full p-1">
+            <div className="hidden md:flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-full p-1 ml-auto mr-4">
               {navLinks.map((link) => (
                 <Motion.button
                   key={link.name}
@@ -119,19 +111,20 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
-            <Motion.button
-              className="md:hidden p-2 rounded-full bg-black/5 dark:bg-white/10 text-black dark:text-white"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              whileTap={{ scale: 0.9 }}
-            >
-              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </Motion.button>
+            <div className="flex items-center gap-2">
+              <Motion.button
+                className="md:hidden p-2 rounded-full bg-black/5 dark:bg-white/10 text-black dark:text-white"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </Motion.button>
+            </div>
           </div>
         </div>
       </Motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <Motion.div
