@@ -13,7 +13,7 @@ export default function About() {
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-400/10 mb-4">
           <User className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-          <span className="text-sm font-medium text-blue-500 dark:text-blue-400">
+          <span className="text-sm font-medium text-blue-500 dark:text-blue-400 uppercase tracking-wider">
             Get To Know Me
           </span>
         </div>

@@ -56,7 +56,7 @@ export default function Portfolio() {
           ></Motion.div>
         </section>
 
-        <footer className="py-12 pb-24 -mt-16 px-4 border-t border-black/10 dark:border-white/10 bg-linear-to-t from-black/5 dark:from-white/5 to-transparent">
+        <footer className="bg-transparent dark:bg-transparent py-12 pb-24 -mt-16 px-4 border-t border-black/10 dark:border-white/10 bg-linear-to-t from-black/5 dark:from-white/5 to-transparent">
           <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

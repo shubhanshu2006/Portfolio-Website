@@ -81,7 +81,7 @@ export default function Projects() {
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 dark:bg-amber-400/10 mb-4">
           <FolderGit2 className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-          <span className="text-sm font-medium text-amber-600 dark:text-amber-400">
+          <span className="text-sm font-medium text-amber-600 dark:text-amber-400 uppercase tracking-wider">
             My Work
           </span>
         </div>

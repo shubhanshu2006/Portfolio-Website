@@ -98,7 +98,7 @@ export default function Skills() {
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 dark:bg-emerald-400/10 mb-4">
           <SiReact className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
-          <span className="text-sm font-medium text-emerald-500 dark:text-emerald-400">
+          <span className="text-sm font-medium text-emerald-500 dark:text-emerald-400 uppercase tracking-wider">
             Technical Expertise
           </span>
         </div>

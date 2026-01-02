@@ -39,7 +39,7 @@ export default function Education() {
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 dark:bg-purple-400/10 mb-4">
           <GraduationCap className="w-4 h-4 text-purple-500 dark:text-purple-400" />
-          <span className="text-sm font-medium text-purple-500 dark:text-purple-400">
+          <span className="text-sm font-medium text-purple-500 dark:text-purple-400 uppercase tracking-wider">
             Academic Journey
           </span>
         </div>
