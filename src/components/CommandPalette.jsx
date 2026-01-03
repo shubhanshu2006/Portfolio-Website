@@ -9,7 +9,7 @@ import {
   GraduationCap,
   Award,
   FolderGit2,
-  Mail,
+  Github,
 } from "lucide-react";
 
 const navigationItems = [
@@ -20,7 +20,7 @@ const navigationItems = [
   { name: "Education", href: "#education", icon: GraduationCap },
   { name: "Achievements", href: "#achievements", icon: Award },
   { name: "Projects", href: "#projects", icon: FolderGit2 },
-  { name: "Contact", href: "#contact", icon: Mail },
+  { name: "GitHub", href: "#github", icon: Github },
 ];
 
 export default function CommandPalette() {

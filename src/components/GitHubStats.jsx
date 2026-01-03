@@ -24,7 +24,9 @@ const getLastYearDays = (days) => {
 
 const getCurrentStreak = (days) => {
   let streak = 0;
-  const today = new Date().toISOString().slice(0, 10);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
   const sortedDays = [...days].sort(
     (a, b) => new Date(a.date) - new Date(b.date)
@@ -32,8 +34,15 @@ const getCurrentStreak = (days) => {
 
   for (let i = sortedDays.length - 1; i >= 0; i--) {
     const day = sortedDays[i];
+    const dayDate = new Date(day.date);
+    dayDate.setHours(0, 0, 0, 0);
 
-    if (day.date === today && day.count === 0) continue;
+    if (dayDate.getTime() === today.getTime()) {
+      if (day.count > 0) {
+        streak++;
+      }
+      continue;
+    }
 
     if (day.count > 0) {
       streak++;
@@ -161,7 +170,7 @@ export default function GitHubStats() {
   }, [username]);
 
   const getColorForCount = (count) => {
-    if (count === 0) return theme === "dark" ? "#161b22" : "#ebedf0";
+    if (count === 0) return "#0d1117";
     if (count < 3) return theme === "dark" ? "#0e4429" : "#9be9a8";
     if (count < 6) return theme === "dark" ? "#006d32" : "#40c463";
     if (count < 9) return theme === "dark" ? "#26a641" : "#30a14e";
@@ -213,7 +222,7 @@ export default function GitHubStats() {
     return (
       <div className="relative pt-4">
         <div className="mb-6 flex items-center justify-between flex-wrap gap-3">
-          <h3 className="text-xl font-bold text-black dark:text-white flex items-center gap-3">
+          <h3 className="text-xl font-bold text-white flex items-center gap-3">
             <div className="p-2 rounded-lg bg-linear-to-br from-green-500 to-emerald-600">
               <Calendar className="w-5 h-5 text-white" />
             </div>
@@ -272,7 +281,7 @@ export default function GitHubStats() {
             </Motion.div>
           )}
 
-          <div className="flex items-center justify-center gap-2 mt-6 text-xs font-medium text-black/70 dark:text-white/70">
+          <div className="flex items-center justify-center gap-2 mt-6 text-xs font-medium text-white/70">
             <span>Less</span>
             {[0, 1, 3, 6, 9].map((level, i) => (
               <Motion.div
@@ -400,7 +409,7 @@ export default function GitHubStats() {
             <div className="relative w-full max-w-5xl">
               <div className="absolute -inset-1 bg-linear-to-r from-green-500/20 via-emerald-500/20 to-teal-500/20 rounded-3xl blur-2xl" />
 
-              <div className="relative bg-white dark:bg-zinc-950 backdrop-blur-xl rounded-3xl p-8 border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
+              <div className="relative bg-zinc-800 dark:bg-zinc-950 backdrop-blur-xl rounded-3xl p-8 border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-green-500/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-linear-to-tr from-emerald-500/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
 
