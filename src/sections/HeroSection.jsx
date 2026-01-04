@@ -120,16 +120,14 @@ export default function HeroSection() {
             }}
             className="relative group px-8 py-4 rounded-xl font-semibold text-white bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/50 transition-shadow duration-300 will-change-transform overflow-hidden"
           >
-           
             <div className="absolute -inset-1 rounded-xl bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 opacity-0 blur-lg group-hover:opacity-40 transition-opacity duration-300" />{" "}
             <div className="absolute inset-0 bg-linear-to-r from-blue-700 via-indigo-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />{" "}
             <span className="relative flex items-center gap-2">
-              
               View Projects
             </span>
           </Motion.button>
           <Motion.a
-            href="/Resume.pdf"
+            href="https://drive.google.com/file/d/1uKB-JbegO6czNjdFz_qBt1AF-9ho1t_R/view"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ y: 0 }}
