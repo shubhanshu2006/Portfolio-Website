@@ -15,6 +15,7 @@ import Education from "../sections/Education";
 import Projects from "../sections/Projects";
 import Achievements from "../sections/Achievements";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Portfolio() {
   const [loaded, setLoaded] = useState(false);
@@ -66,11 +67,11 @@ export default function Portfolio() {
           >
             <p className="text-black/70 dark:text-white/70 text-base font-medium flex flex-wrap items-center justify-center gap-2 mb-4">
               <span className="whitespace-nowrap">
-                © 2025-Present • Shubhanshu Singh •
+                © {new Date().getFullYear()} Shubhanshu Singh •
               </span>
               <span className="whitespace-nowrap flex items-center gap-1.5">
                 Made with{" "}
-                <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
+                <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" /> •
               </span>
               <span className="whitespace-nowrap">All rights reserved.</span>
             </p>
@@ -83,6 +84,7 @@ export default function Portfolio() {
           </Motion.div>
         </footer>
       </main>
+      <Analytics />
     </>
   );
 }
