@@ -33,6 +33,7 @@ export default function Projects() {
         "MongoDB",
         "TypeScript",
         "TailwindCSS",
+        "Supabase",
       ],
       site: "https://link-drop-delta.vercel.app/",
       repo: "https://github.com/shubhanshu2006/LinkDrop",
