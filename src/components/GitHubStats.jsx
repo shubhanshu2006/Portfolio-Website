@@ -29,7 +29,7 @@ const getCurrentStreak = (days) => {
   today.setHours(0, 0, 0, 0);
 
   const sortedDays = [...days].sort(
-    (a, b) => new Date(a.date) - new Date(b.date)
+    (a, b) => new Date(a.date) - new Date(b.date),
   );
 
   for (let i = sortedDays.length - 1; i >= 0; i--) {
@@ -122,7 +122,7 @@ export default function GitHubStats() {
   const [contributionData, setContributionData] = useState(null);
   const [hoveredDay, setHoveredDay] = useState(null);
   const [theme, setTheme] = useState(() =>
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
+    document.documentElement.classList.contains("dark") ? "dark" : "light",
   );
   const username = "shubhanshu2006";
 
@@ -149,7 +149,7 @@ export default function GitHubStats() {
             headers: {
               Accept: "application/json",
             },
-          }
+          },
         );
 
         if (!response.ok) {
@@ -219,6 +219,24 @@ export default function GitHubStats() {
       weeks.push(allDays.slice(i, i + 7));
     }
 
+    const monthLabels = [];
+    let lastMonth = -1;
+
+    weeks.forEach((week, weekIndex) => {
+      const firstValidDay = week.find((day) => !day.isEmpty);
+      if (firstValidDay) {
+        const date = new Date(firstValidDay.date);
+        const month = date.getMonth();
+        if (month !== lastMonth) {
+          monthLabels.push({
+            name: date.toLocaleString("en-US", { month: "short" }),
+            weekIndex: weekIndex,
+          });
+          lastMonth = month;
+        }
+      }
+    });
+
     return (
       <div className="relative pt-4">
         <div className="mb-6 flex items-center justify-between flex-wrap gap-3">
@@ -231,34 +249,59 @@ export default function GitHubStats() {
         </div>
 
         <div className="relative overflow-visible">
-          <div className="flex gap-0 overflow-x-auto pb-4 pr-4 pt-2 px-2 justify-center">
-            {weeks.map((week, weekIndex) => (
-              <div key={weekIndex} className="flex flex-col gap-0">
-                {week.map((day, dayIndex) => (
-                  <Motion.div
-                    key={dayIndex}
-                    className="relative group p-0.5"
-                    onMouseEnter={() => !day.isEmpty && setHoveredDay(day)}
-                    onMouseLeave={() => setHoveredDay(null)}
-                    whileHover={!day.isEmpty ? { scale: 1.5, zIndex: 10 } : {}}
-                    transition={{ duration: 0.2 }}
+          <div className="flex flex-col items-center overflow-x-auto pb-4">
+            {/* Month Labels */}
+            <div className="flex mb-2 text-[10px] text-white/40 font-medium ml-1">
+              {weeks.map((_, weekIndex) => {
+                const label = monthLabels.find(
+                  (m) => m.weekIndex === weekIndex,
+                );
+                return (
+                  <div
+                    key={weekIndex}
+                    className="w-[18px] relative h-4 shrink-0"
                   >
-                    <div
-                      className={`w-3.5 h-3.5 rounded transition-all duration-200 ${
-                        !day.isEmpty
-                          ? "hover:ring-2 hover:ring-offset-2 hover:ring-green-500 dark:hover:ring-green-400 cursor-pointer hover:shadow-lg"
-                          : ""
-                      }`}
-                      style={{
-                        backgroundColor: day.isEmpty
-                          ? "transparent"
-                          : getColorForCount(day.count),
-                      }}
-                    />
-                  </Motion.div>
-                ))}
-              </div>
-            ))}
+                    {label && (
+                      <span className="absolute left-0 bottom-0 whitespace-nowrap">
+                        {label.name}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="flex gap-0 px-2 justify-center">
+              {weeks.map((week, weekIndex) => (
+                <div key={weekIndex} className="flex flex-col gap-0">
+                  {week.map((day, dayIndex) => (
+                    <Motion.div
+                      key={dayIndex}
+                      className="relative group p-0.5"
+                      onMouseEnter={() => !day.isEmpty && setHoveredDay(day)}
+                      onMouseLeave={() => setHoveredDay(null)}
+                      whileHover={
+                        !day.isEmpty ? { scale: 1.5, zIndex: 10 } : {}
+                      }
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div
+                        className={`w-3.5 h-3.5 rounded transition-all duration-200 ${
+                          !day.isEmpty
+                            ? "hover:ring-2 hover:ring-offset-2 hover:ring-green-500 dark:hover:ring-green-400 cursor-pointer hover:shadow-lg"
+                            : ""
+                        }`}
+                        style={{
+                          backgroundColor: day.isEmpty
+                            ? "transparent"
+                            : getColorForCount(day.count),
+                        }}
+                      />
+                    </Motion.div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
 
           {hoveredDay && !hoveredDay.isEmpty && (
@@ -347,21 +390,21 @@ export default function GitHubStats() {
         {contributionData &&
           (() => {
             const lifetimeTotal = Object.values(
-              contributionData.total || {}
+              contributionData.total || {},
             ).reduce((sum, v) => sum + v, 0);
 
             const lastYearDays = getLastYearDays(
-              contributionData.contributions
+              contributionData.contributions,
             );
 
             const lastYearTotal = lastYearDays.reduce(
               (sum, d) => sum + d.count,
-              0
+              0,
             );
 
             const currentStreak = getCurrentStreak(lastYearDays);
             const longestStreak = getLongestStreak(
-              contributionData.contributions
+              contributionData.contributions,
             );
 
             return (
