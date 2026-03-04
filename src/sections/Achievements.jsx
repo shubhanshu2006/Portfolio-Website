@@ -5,11 +5,22 @@ const achievements = [
   {
     date: "September 2025 - October 2025",
     title: "Smart India Hackathon",
-    subtitle: "College Level",
+    subtitle: "College Level Participant",
     points: [
       "Built an AI-based farming assistant",
       "Worked in a 6-member team",
       "Solved real-world agricultural problems",
+    ],
+  },
+  {
+    date: "February 2026",
+    title: "RIFT Hackathon",
+    subtitle: "Participant",
+    points: [
+      "Built a graph-based fraud detection system for transaction networks",
+      "Detected circular fund flows using DFS and SCC algorithms",
+      "Implemented anomaly detection and risk scoring",
+      "Identified 130 fraud rings across 17K+ accounts",
     ],
   },
   {
