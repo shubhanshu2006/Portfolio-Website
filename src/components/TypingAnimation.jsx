@@ -5,19 +5,19 @@ export default function TypingAnimation() {
     <TypeAnimation
       sequence={[
         "Full Stack Developer",
-        1200,
+        1400,
         "",
-        400,
+        300,
         "Problem Solver",
-        1200,
+        1400,
         "",
-        400,
+        300,
       ]}
-      speed={15}
+      speed={20}
       repeat={Infinity}
       cursor={true}
       wrapper="span"
-      className="text-transparent font-bold text-3xl bg-clip-text bg-linear-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-600"
+      className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 dark:from-indigo-400 dark:via-purple-400 dark:to-blue-400"
     />
   );
 }

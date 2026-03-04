@@ -57,7 +57,7 @@ export default function Portfolio() {
           ></Motion.div>
         </section>
 
-        <footer className="bg-transparent dark:bg-transparent py-12 pb-24 -mt-16 px-4 border-t border-black/10 dark:border-white/10 bg-linear-to-t from-black/5 dark:from-white/5 to-transparent">
+        <footer className="py-14 pb-28 px-6 border-t border-black/8 dark:border-white/8">
           <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,22 +65,19 @@ export default function Portfolio() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <p className="text-black/70 dark:text-white/70 text-base font-medium flex flex-wrap items-center justify-center gap-2 mb-4">
-              <span className="whitespace-nowrap">
-                © {new Date().getFullYear()} Shubhanshu Singh •
-              </span>
-              <span className="whitespace-nowrap flex items-center gap-1.5">
-                Made with{" "}
-                <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" /> •
-              </span>
-              <span className="whitespace-nowrap">All rights reserved.</span>
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-br from-blue-500 via-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/30 mb-5">
+              <span className="text-base font-black text-white tracking-tight">SS</span>
+            </div>
+            <p className="text-black/60 dark:text-white/60 text-sm font-medium flex flex-wrap items-center justify-center gap-2 mb-2">
+              <span className="whitespace-nowrap font-semibold text-black/80 dark:text-white/80">Shubhanshu Singh</span>
+              <span className="text-black/30 dark:text-white/30">·</span>
+              <span className="whitespace-nowrap">Full Stack Developer</span>
+              <span className="text-black/30 dark:text-white/30">·</span>
+              <span className="whitespace-nowrap">© {new Date().getFullYear()}</span>
             </p>
-            <Motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-black/50 dark:text-white/50 text-sm"
-            ></Motion.p>
+            <p className="text-black/35 dark:text-white/35 text-xs tracking-wider uppercase">
+              Made with <Heart className="w-3 h-3 text-rose-400 fill-rose-400 animate-pulse inline-block mx-0.5" />
+            </p>
           </Motion.div>
         </footer>
       </main>
