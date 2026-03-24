@@ -8,7 +8,7 @@ export default function Projects() {
     {
       title: "VideoTube",
       year: "2025",
-      desc: "A full-stack video sharing platform built to demonstrate authentication, secure cookies, JWT-based sessions, and scalable backend design.",
+      desc: "VideoTube is a full-stack video sharing platform built to replicate real-world streaming systems, featuring secure authentication, JWT-based sessions, protected routes, and a scalable backend for efficient content management and user interaction.",
       tech: [
         "NodeJs",
         "React",
@@ -25,7 +25,7 @@ export default function Projects() {
     {
       title: "LinkDrop",
       year: "2026",
-      desc: "LinkDrop is a secure file sharing platform designed to give senders precise control over how files are accessed, stored, and expired.",
+      desc: "LinkDrop is a secure file sharing platform designed to provide controlled access through expiring links, access restrictions, and storage management, ensuring privacy, reliability, and a seamless file distribution experience.",
       tech: [
         "NodeJs",
         "React",
@@ -41,14 +41,24 @@ export default function Projects() {
       featured: false,
     },
     {
-      title: "Gamma",
-      year: "--",
-      desc: "To be added soon...",
-      tech: ["To be added", "To be added", "To be added", "To be added"],
-      site: "#",
-      repo: "#",
-      img: "/Coming_Soon.jpg",
-      featured: false,
+      title: "BharatSetu",
+      year: "2026",
+      desc: "BharatSetu is a scalable civic-tech platform that bridges citizens and authorities through AI-assisted complaint triage, real-time tracking, SLA enforcement, and data-driven administrative insights to ensure transparent and accountable governance.",
+      tech: [
+        "NextJs",
+        "TypeScript",
+        "JavaScript",
+        "TailwindCSS",
+        "NodeJs",
+        "Express",
+        "PostgreSQL",
+        "Supabase",
+        "Redis",
+      ],
+      site: "https://p-crm-platform.vercel.app/",
+      repo: "https://github.com/shubhanshu2006/P-CRM-Platform",
+      img: "/Project_BharatSetu.png",
+      featured: true,
     },
   ];
 
@@ -115,16 +125,6 @@ export default function Projects() {
             </Motion.div>
           ))}
         </Motion.div>
-
-        <Motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-center text-black/80 dark:text-white/80 text-3xl mt-14 font-medium"
-        >
-          More projects will be added soon...
-        </Motion.p>
 
         <Motion.div
           initial={{ opacity: 0, y: 30 }}
