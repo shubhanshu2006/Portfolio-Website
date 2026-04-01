@@ -10,6 +10,8 @@ import {
   Award,
   FolderGit2,
   Github,
+  Camera,
+  Code2,
 } from "lucide-react";
 
 const navigationItems = [
@@ -19,6 +21,8 @@ const navigationItems = [
   { name: "Work", href: "#work", icon: Briefcase },
   { name: "Education", href: "#education", icon: GraduationCap },
   { name: "Achievements", href: "#achievements", icon: Award },
+  { name: "Hackathons", href: "#hackathons", icon: Camera },
+  { name: "Philosophy", href: "#philosophy", icon: Code2 },
   { name: "Projects", href: "#projects", icon: FolderGit2 },
   { name: "GitHub", href: "#github", icon: Github },
 ];
@@ -29,12 +33,12 @@ export default function CommandPalette() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const filteredItems = navigationItems.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
+    item.name.toLowerCase().includes(search.toLowerCase()),
   );
 
   const currentSelectedIndex = Math.min(
     selectedIndex,
-    filteredItems.length - 1
+    filteredItems.length - 1,
   );
 
   const navigateToSection = useCallback((href) => {
@@ -66,7 +70,7 @@ export default function CommandPalette() {
       if (e.key === "ArrowDown") {
         e.preventDefault();
         setSelectedIndex((prev) =>
-          prev < filteredItems.length - 1 ? prev + 1 : prev
+          prev < filteredItems.length - 1 ? prev + 1 : prev,
         );
       }
 
@@ -80,7 +84,7 @@ export default function CommandPalette() {
         navigateToSection(filteredItems[currentSelectedIndex].href);
       }
     },
-    [isOpen, filteredItems, currentSelectedIndex, navigateToSection]
+    [isOpen, filteredItems, currentSelectedIndex, navigateToSection],
   );
 
   useEffect(() => {

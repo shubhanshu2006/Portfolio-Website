@@ -14,6 +14,9 @@ import Work from "../sections/Work";
 import Education from "../sections/Education";
 import Projects from "../sections/Projects";
 import Achievements from "../sections/Achievements";
+import Hackathons from "../sections/Hackathons";
+import CodePhilosophy from "../sections/CodePhilosophy";
+import CustomCursor from "../components/CustomCursor";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -22,6 +25,7 @@ export default function Portfolio() {
 
   return (
     <>
+      <CustomCursor />
       {!loaded && <Loader onLoadComplete={() => setLoaded(true)} />}
       <div className="fixed inset-0 -z-50">
         <AuroraBackground />
@@ -44,6 +48,8 @@ export default function Portfolio() {
         <Work />
         <Education />
         <Achievements />
+        <Hackathons />
+        <CodePhilosophy />
         <Projects />
         <GitHubStats />
 
@@ -66,17 +72,24 @@ export default function Portfolio() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-br from-blue-500 via-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/30 mb-5">
-              <span className="text-base font-black text-white tracking-tight">SS</span>
+              <span className="text-base font-black text-white tracking-tight">
+                SS
+              </span>
             </div>
             <p className="text-black/60 dark:text-white/60 text-sm font-medium flex flex-wrap items-center justify-center gap-2 mb-2">
-              <span className="whitespace-nowrap font-semibold text-black/80 dark:text-white/80">Shubhanshu Singh</span>
+              <span className="whitespace-nowrap font-semibold text-black/80 dark:text-white/80">
+                Shubhanshu Singh
+              </span>
               <span className="text-black/30 dark:text-white/30">·</span>
               <span className="whitespace-nowrap">Full Stack Developer</span>
               <span className="text-black/30 dark:text-white/30">·</span>
-              <span className="whitespace-nowrap">© {new Date().getFullYear()}</span>
+              <span className="whitespace-nowrap">
+                © {new Date().getFullYear()}
+              </span>
             </p>
             <p className="text-black/35 dark:text-white/35 text-xs tracking-wider uppercase">
-              Made with <Heart className="w-3 h-3 text-rose-400 fill-rose-400 animate-pulse inline-block mx-0.5" />
+              Made with{" "}
+              <Heart className="w-3 h-3 text-rose-400 fill-rose-400 animate-pulse inline-block mx-0.5" />
             </p>
           </Motion.div>
         </footer>
