@@ -25,6 +25,7 @@ const navigationItems = [
   { name: "Philosophy", href: "#philosophy", icon: Code2 },
   { name: "Projects", href: "#projects", icon: FolderGit2 },
   { name: "GitHub", href: "#github", icon: Github },
+  { name: "Contact", href: "#contact", icon: User },
 ];
 
 export default function CommandPalette() {

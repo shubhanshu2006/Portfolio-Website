@@ -13,6 +13,7 @@ const navLinks = [
   { name: "Philosophy", href: "#philosophy" },
   { name: "Projects", href: "#projects" },
   { name: "GitHub", href: "#github" },
+  {name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
