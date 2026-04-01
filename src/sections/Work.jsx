@@ -26,16 +26,16 @@ export default function Work() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-12"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-400/10 mb-4">
-          <Briefcase className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-          <span className="text-sm font-medium text-blue-500 dark:text-blue-400 uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
+          <Briefcase className="w-4 h-4 text-blue-500" />
+          <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
             Career
           </span>
         </div>
-        <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-4">
-          Work Experience
+        <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
+          Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Experience.</span>
         </h2>
-        <p className="text-black/60 dark:text-white/60 text-lg max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           My professional journey and the amazing teams I've worked with
         </p>
       </Motion.div>
@@ -54,16 +54,14 @@ export default function Work() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, margin: "-50px" }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-            className={`relative flex flex-col md:flex-row items-center gap-8 mb-12 ${
-              i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
+            className={`relative flex flex-col md:flex-row items-center gap-8 mb-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
           >
             <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-linear-to-r from-blue-500 to-indigo-500 border-4 border-white dark:border-zinc-900 transform -translate-x-1/2 hidden md:block z-10 shadow-lg shadow-blue-500/50" />
 
             <div
-              className={`w-full md:w-[calc(50%-2rem)] ${
-                i % 2 === 0 ? "md:pr-8" : "md:pl-8"
-              }`}
+              className={`w-full md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                }`}
             >
               <Motion.div
                 whileHover={{ y: -6 }}
@@ -78,7 +76,7 @@ export default function Work() {
 
                 <div className="relative bg-white dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 rounded-2xl p-6 border border-black/10 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/30 overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-bl from-blue-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/4" />
-                  
+
                   <div className="relative flex items-start gap-4 mb-4">
                     <Motion.div
                       whileHover={{ scale: 1.1, rotate: -5 }}

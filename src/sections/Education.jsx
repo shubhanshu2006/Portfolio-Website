@@ -37,18 +37,17 @@ export default function Education() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-12"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 dark:bg-purple-400/10 mb-4">
-          <GraduationCap className="w-4 h-4 text-purple-500 dark:text-purple-400" />
-          <span className="text-sm font-medium text-purple-500 dark:text-purple-400 uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
+          <GraduationCap className="w-4 h-4 text-purple-500" />
+          <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
             Academic Journey
           </span>
         </div>
-        <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-4">
-          Education
+        <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
+          Formal <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400">Education.</span>
         </h2>
-        <p className="text-black/60 dark:text-white/60 text-lg max-w-2xl mx-auto">
-          Building a strong foundation in computer science and software
-          engineering
+        <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
+          Building a strong foundation in computer science and software engineering
         </p>
       </Motion.div>
 

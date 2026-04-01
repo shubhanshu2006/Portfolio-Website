@@ -65,7 +65,7 @@ export default function Contact() {
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: false, margin: "-100px" }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="max-w-4xl mx-auto relative z-10"
       >
@@ -144,11 +144,10 @@ export default function Contact() {
                 whileHover={status === "idle" ? { scale: 1.02 } : {}}
                 whileTap={status === "idle" ? { scale: 0.98 } : {}}
                 disabled={status !== "idle"}
-                className={`relative overflow-hidden w-full py-4 rounded-2xl font-bold shadow-xl transition-all duration-300 flex items-center justify-center gap-2 ${
-                  status === "success"
-                    ? "bg-green-500 text-white"
-                    : "bg-black text-white dark:bg-white dark:text-black hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
-                }`}
+                className={`relative overflow-hidden w-full py-4 rounded-2xl font-bold shadow-xl transition-all duration-300 flex items-center justify-center gap-2 ${status === "success"
+                  ? "bg-green-500 text-white"
+                  : "bg-black text-white dark:bg-white dark:text-black hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
+                  }`}
               >
                 {status === "idle" && (
                   <>

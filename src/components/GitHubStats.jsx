@@ -353,38 +353,19 @@ export default function GitHubStats() {
         transition={{ duration: 0.6 }}
         className="max-w-7xl mx-auto relative z-10"
       >
-        <div className="text-center mb-16">
-          <Motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-linear-to-r from-green-500/20 via-emerald-500/20 to-teal-500/20 dark:from-green-400/20 dark:via-emerald-400/20 dark:to-teal-400/20 mb-6 border border-green-500/30 dark:border-green-400/30 backdrop-blur-sm"
-          >
-            <Github className="w-4 h-4 text-green-600 dark:text-green-400" />
-            <span className="text-sm font-medium text-green-600 dark:text-green-400 uppercase tracking-wider">
+        <div className="text-center mb-20 md:mb-24">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
+            <Github className="w-4 h-4 text-blue-500" />
+            <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
               GitHub Activity
             </span>
-          </Motion.div>
-          <Motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-3"
-          >
-            Streak & Contributions
-          </Motion.h2>
-          <Motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-black/60 dark:text-white/60 max-w-2xl mx-auto"
-          >
-            Track my coding journey with real-time GitHub statistics and
-            contribution patterns
-          </Motion.p>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
+            Streak & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Contributions.</span>
+          </h2>
+          <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
+            Track my coding journey with real-time GitHub statistics and contribution patterns.
+          </p>
         </div>
 
         {contributionData &&

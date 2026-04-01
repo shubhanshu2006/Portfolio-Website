@@ -16,6 +16,7 @@ import Projects from "../sections/Projects";
 import Achievements from "../sections/Achievements";
 import Hackathons from "../sections/Hackathons";
 import CodePhilosophy from "../sections/CodePhilosophy";
+import Contact from "../sections/Contact";
 import CustomCursor from "../components/CustomCursor";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Analytics } from "@vercel/analytics/react";
@@ -52,6 +53,7 @@ export default function Portfolio() {
         <CodePhilosophy />
         <Projects />
         <GitHubStats />
+        <Contact />
 
         <section className="py-8 px-4">
           <Motion.div

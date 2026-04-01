@@ -9,14 +9,15 @@ export default function CustomCursor() {
   const ringX = useMotionValue(-100);
   const ringY = useMotionValue(-100);
 
+  // Increased stiffness and damping for tighter, faster follow (reduced gap/lag)
   const ringXSpring = useSpring(ringX, {
-    damping: 40,
-    stiffness: 800,
+    damping: 35,
+    stiffness: 1400,
     mass: 0.1,
   });
   const ringYSpring = useSpring(ringY, {
-    damping: 40,
-    stiffness: 800,
+    damping: 35,
+    stiffness: 1400,
     mass: 0.1,
   });
 
@@ -67,7 +68,7 @@ export default function CustomCursor() {
         }}
         transition={{
           type: "spring",
-          stiffness: 900,
+          stiffness: 1200,
           damping: 40,
         }}
       />
@@ -83,7 +84,7 @@ export default function CustomCursor() {
         }}
         transition={{
           type: "spring",
-          stiffness: 500,
+          stiffness: 800,
           damping: 28,
         }}
       />

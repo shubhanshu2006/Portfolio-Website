@@ -44,18 +44,16 @@ export default function Achievements() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-12"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-400/10 mb-4">
-          <Trophy className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-          <span className="text-sm font-medium text-blue-500 dark:text-blue-400 uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
+          <Trophy className="w-4 h-4 text-blue-500" />
+          <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
             Accomplishments
           </span>
         </div>
-
-        <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-4">
-          Achievements
+        <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
+          Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Achievements.</span>
         </h2>
-
-        <p className="text-black/60 dark:text-white/60 text-lg max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           Milestones and recognitions throughout my journey
         </p>
       </Motion.div>
@@ -75,9 +73,8 @@ export default function Achievements() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, margin: "-50px" }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-            className={`relative flex flex-col md:flex-row items-center gap-8 mb-12 ${
-              i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
+            className={`relative flex flex-col md:flex-row items-center gap-8 mb-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
           >
             <div
               className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full 
@@ -88,9 +85,8 @@ export default function Achievements() {
             />
 
             <div
-              className={`w-full md:w-[calc(50%-2rem)] ${
-                i % 2 === 0 ? "md:pr-8" : "md:pl-8"
-              }`}
+              className={`w-full md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                }`}
             >
               <Motion.div
                 whileHover={{ y: -6 }}

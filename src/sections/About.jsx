@@ -11,16 +11,16 @@ export default function About() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-12"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-400/10 mb-4">
-          <User className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-          <span className="text-sm font-medium text-blue-500 dark:text-blue-400 uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
+          <User className="w-4 h-4 text-blue-500" />
+          <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
             Get To Know Me
           </span>
         </div>
-        <h2 className="text-black dark:text-white text-4xl md:text-5xl font-bold mb-4">
-          About Me
+        <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
+          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Me.</span>
         </h2>
-        <p className="text-black/60 dark:text-white/60 text-lg max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           Passionate about creating impactful digital experiences
         </p>
       </Motion.div>
