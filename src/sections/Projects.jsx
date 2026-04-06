@@ -57,7 +57,7 @@ export default function Projects() {
       ],
       site: "https://p-crm-platform.vercel.app/",
       repo: "https://github.com/shubhanshu2006/P-CRM-Platform",
-      img: "/Project_BharatSetu.png",
+      img: "/Project_BharatSetu.jpeg",
       featured: true,
     },
   ];
