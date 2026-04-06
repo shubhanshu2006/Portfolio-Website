@@ -151,7 +151,7 @@ export default function HeroSection() {
           </Motion.button>
 
           <Motion.a
-            href="https://drive.google.com/file/d/1Ewq03smjj89XH74w27U62OBqM8QTQNRb/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Ewq03smjj89XH74w27U62OBqM8QTQNRb/view?usp=drive_linkg"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ y: 0 }}
