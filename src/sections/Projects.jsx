@@ -60,7 +60,29 @@ export default function Projects() {
       img: "/Project_BharatSetu.jpeg",
       featured: true,
     },
+    {
+      title: "CareerForge",
+      year: "2026",
+      desc: "CareerForge is a Career Operating System built for students and early-career professionals. While traditional job boards surface opportunities after they've already accumulated hundreds of applicants, CareerForge continuously monitors company career pages and exclusive hiring sources to surface jobs the moment they go live.",
+      tech: [
+        "Next.js",
+        "React ",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Redis",
+        "Clerk",
+        "Playwright",
+        "Brevo",
+      ],
+      site: "https://career-forge-gamma.vercel.app",
+      repo: "https://github.com/shubhanshu2006/CareerForge",
+      img: "/CareerForge.jpeg",
+      featured: true,
+    },
   ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -106,14 +128,18 @@ export default function Projects() {
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Projects.</span>
+            Featured{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+              Projects.
+            </span>
           </h2>
           <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
-            A showcase of my recent platforms, technical experiments, and scalable architectures designed for modern web requirements.
+            A showcase of my recent platforms, technical experiments, and
+            scalable architectures designed for modern web requirements.
           </p>
         </Motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="flex flex-wrap justify-center gap-8 lg:gap-10">
           {projects.map((p, i) => (
             <Motion.div
               key={i}
@@ -121,7 +147,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
-              className="h-full"
+              className="w-full lg:w-[calc(50%-1.25rem)]"
             >
               <ProjectCard {...p} />
             </Motion.div>
@@ -144,7 +170,9 @@ export default function Projects() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-10 dark:group-hover:opacity-100 transition-opacity duration-500" />
             <Rocket className="w-5 h-5 relative z-10 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-black dark:group-hover:text-white transition-all duration-300" />
-            <span className="relative z-10 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">View More on GitHub</span>
+            <span className="relative z-10 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
+              View More on GitHub
+            </span>
           </Motion.a>
         </Motion.div>
       </div>
