@@ -5,6 +5,7 @@ import {
   Award,
   BookOpen,
   ExternalLink,
+  CheckCircle2,
 } from "lucide-react";
 
 export default function Education() {
@@ -14,8 +15,8 @@ export default function Education() {
       logo: "/Logo.png",
       degree: "B.Tech — Computer Science and Engineering",
       duration: "2024 - 2028",
-
       status: "Currently Pursuing",
+      focus: "Full-Stack Development",
       link: "https://www.rkgit.edu.in",
       highlights: [
         "Specializing in Full-Stack Development",
@@ -65,21 +66,25 @@ export default function Education() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative group"
           >
-            <div className="absolute -inset-1 bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+            <div className="glow-pulse-soft absolute -inset-1 bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-3xl blur opacity-30" />
 
-            <div className="relative bg-white dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 rounded-3xl p-8 border border-black/10 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/30 overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-orange-500/10 to-transparent rounded-full -translate-y-32 translate-x-32" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-linear-to-tr from-amber-500/10 to-transparent rounded-full translate-y-24 -translate-x-24" />
+            <div className="relative bg-white dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/30 overflow-hidden">
+              {/* Top accent bar, like a certificate/credential ribbon */}
+              <div className="h-1.5 w-full bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500" />
 
-              <div className="relative">
-                <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+              <div className="relative p-8 md:p-10">
+                <GraduationCap className="absolute -right-6 -top-10 w-48 h-48 text-orange-500/[0.04] dark:text-orange-400/[0.05] rotate-12 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-linear-to-tr from-amber-500/10 to-transparent rounded-full translate-y-1/2 -translate-x-1/4 pointer-events-none" />
+
+                {/* Institution header */}
+                <div className="relative flex flex-col sm:flex-row sm:items-start gap-5 mb-8">
                   <Motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     className="relative shrink-0"
                   >
-                    <div className="w-20 h-20 rounded-xl bg-linear-to-br from-orange-500 to-amber-500 p-0.5 shadow-lg shadow-orange-500/30">
-                      <div className="w-full h-full rounded-xl bg-white flex items-center justify-center overflow-hidden">
+                    <div className="w-20 h-20 rounded-2xl bg-linear-to-br from-orange-500 to-amber-500 p-0.5 shadow-lg shadow-orange-500/30">
+                      <div className="w-full h-full rounded-2xl bg-white flex items-center justify-center overflow-hidden">
                         <img
                           src={edu.logo}
                           alt={edu.institution}
@@ -87,68 +92,83 @@ export default function Education() {
                         />
                       </div>
                     </div>
-                    <div className="absolute -inset-0.5 bg-linear-to-br from-orange-500 to-amber-500 rounded-xl blur opacity-20 -z-10" />
+                    <div className="absolute -inset-0.5 bg-linear-to-br from-orange-500 to-amber-500 rounded-2xl blur opacity-20 -z-10" />
                   </Motion.div>
 
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="text-2xl font-bold text-black dark:text-white">
                         {edu.institution}
                       </h3>
                       <a
                         href={edu.link}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-black/40 dark:text-white/40 hover:text-orange-500 dark:hover:text-orange-400 transition-all hover:scale-110"
                       >
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     </div>
-                    <p className="text-lg font-bold text-transparent bg-clip-text bg-linear-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400 mb-3">
+                    <p className="text-lg font-bold text-transparent bg-clip-text bg-linear-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400 mt-1">
                       {edu.degree}
                     </p>
+                  </div>
+                </div>
 
-                    <div className="flex flex-wrap gap-3">
-                      <Motion.div
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20,
-                        }}
-                        className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-linear-to-r from-orange-500/20 to-amber-500/20 border border-orange-300/50 dark:border-orange-700/50"
-                      >
-                        <Calendar className="w-4 h-4 text-orange-600 dark:text-orange-400" />
-                        <span className="text-sm font-semibold text-orange-700 dark:text-orange-300">
-                          {edu.duration}
-                        </span>
-                      </Motion.div>
+                {/* Quick facts */}
+                <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                  <div className="flex items-center gap-3 p-3.5 rounded-xl bg-zinc-50 dark:bg-white/5 border border-black/5 dark:border-white/10">
+                    <div className="w-9 h-9 rounded-lg bg-orange-500/10 dark:bg-orange-400/10 flex items-center justify-center shrink-0">
+                      <Calendar className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-black/40 dark:text-white/40">
+                        Duration
+                      </p>
+                      <p className="text-sm font-bold text-black dark:text-white truncate">
+                        {edu.duration}
+                      </p>
+                    </div>
+                  </div>
 
-                      <Motion.div
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20,
-                        }}
-                        className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-green-500/20 border border-green-300/50 dark:border-green-700/50"
-                      >
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-sm font-semibold text-green-700 dark:text-green-300">
-                          {edu.status}
-                        </span>
-                      </Motion.div>
+                  <div className="flex items-center gap-3 p-3.5 rounded-xl bg-zinc-50 dark:bg-white/5 border border-black/5 dark:border-white/10">
+                    <div className="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0">
+                      <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-black/40 dark:text-white/40">
+                        Status
+                      </p>
+                      <p className="text-sm font-bold text-black dark:text-white truncate">
+                        {edu.status}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 p-3.5 rounded-xl bg-zinc-50 dark:bg-white/5 border border-black/5 dark:border-white/10">
+                    <div className="w-9 h-9 rounded-lg bg-orange-500/10 dark:bg-orange-400/10 flex items-center justify-center shrink-0">
+                      <Award className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-black/40 dark:text-white/40">
+                        Focus
+                      </p>
+                      <p className="text-sm font-bold text-black dark:text-white truncate">
+                        {edu.focus}
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-black/10 dark:border-white/10">
+                {/* Highlights */}
+                <div className="relative pt-6 border-t border-black/10 dark:border-white/10">
                   <div className="flex items-center gap-2 mb-4">
-                    <BookOpen className="w-5 h-5 text-orange-500 dark:text-orange-400" />
-                    <h4 className="text-sm font-bold text-black/60 dark:text-white/60 uppercase tracking-wider">
+                    <BookOpen className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                    <h4 className="text-xs font-bold text-black/40 dark:text-white/40 uppercase tracking-widest">
                       Highlights
                     </h4>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <div className="flex flex-wrap gap-2.5">
                     {edu.highlights.map((highlight, idx) => (
                       <Motion.div
                         key={idx}
@@ -158,10 +178,15 @@ export default function Education() {
                           stiffness: 300,
                           damping: 20,
                         }}
-                        className="flex items-center gap-3 p-3 rounded-xl bg-linear-to-r from-orange-500/10 to-amber-500/10 border border-orange-300/30 dark:border-orange-700/30 hover:border-orange-500 dark:hover:border-orange-400 "
+                        className="flex items-center gap-2.5 pl-2 pr-3.5 py-2 rounded-xl bg-orange-500/5 dark:bg-orange-400/5 border border-orange-500/15 dark:border-orange-400/15 hover:border-orange-500/40 dark:hover:border-orange-400/30 transition-colors"
                       >
-                        <div className="w-2 h-2 rounded-full bg-linear-to-r from-orange-500 to-amber-500 shrink-0" />
-                        <span className="text-sm font-medium text-black/70 dark:text-white/70">
+                        <div className="w-6 h-6 rounded-full bg-linear-to-br from-orange-500 to-amber-500 flex items-center justify-center shrink-0">
+                          <CheckCircle2
+                            className="w-3.5 h-3.5 text-white"
+                            strokeWidth={2.5}
+                          />
+                        </div>
+                        <span className="text-sm font-semibold text-black/80 dark:text-white/80">
                           {highlight}
                         </span>
                       </Motion.div>

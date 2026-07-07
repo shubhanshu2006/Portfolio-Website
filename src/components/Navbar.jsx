@@ -10,7 +10,6 @@ const navLinks = [
   { name: "Education", href: "#education" },
   { name: "Achievements", href: "#achievements" },
   { name: "Hackathons", href: "#hackathons" },
-  { name: "Philosophy", href: "#philosophy" },
   { name: "Projects", href: "#projects" },
   { name: "GitHub", href: "#github" },
   { name: "Contact", href: "#contact" },
@@ -74,8 +73,8 @@ export default function Navbar() {
           <div
             className={`flex items-center justify-between p-2 pl-3 rounded-[2rem] md:rounded-full transition-all duration-500 ease-out will-change-[background-color,backdrop-filter,box-shadow,border] border ${
               isScrolled
-                ? "bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] border-black/10 dark:border-white/10"
-                : "bg-white/30 dark:bg-zinc-900/30 backdrop-blur-md shadow-sm border-black/5 dark:border-white/5"
+                ? "bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_8px_32px_rgba(0,0,0,0.4)] border-black/10 dark:border-white/10"
+                : "bg-white/30 dark:bg-zinc-900/30 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] border-black/5 dark:border-white/5"
             }`}
           >
             {/* Logo Section */}

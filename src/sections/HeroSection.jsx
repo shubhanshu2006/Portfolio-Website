@@ -104,6 +104,15 @@ export default function HeroSection() {
           {/* Avatar size increased back up */}
           <div className="relative w-28 h-28 md:w-32 md:h-32 group">
             <div className="absolute -inset-4 bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none" />
+            {/* Slow-rotating gradient halo, reusing the existing brand palette
+                for a distinctive "premium orb" touch behind the photo. */}
+            <div
+              className="absolute -inset-1 rounded-full opacity-80 animate-[spin_7s_linear_infinite] motion-reduce:animate-none pointer-events-none"
+              style={{
+                background:
+                  "conic-gradient(from 0deg, #ff6b35, #ffd700, #ff8c42, #ffb347, #ff6b35)",
+              }}
+            />
             <div className="absolute inset-0 bg-white dark:bg-zinc-900 rounded-full shadow-2xl p-1.5 z-10 border border-black/5 dark:border-white/10">
               <div className="w-full h-full rounded-full overflow-hidden relative">
                 <img
@@ -198,7 +207,7 @@ export default function HeroSection() {
               damping: 18,
               mass: 0.6,
             }}
-            className="relative group w-full sm:w-auto px-8 py-3.5 md:py-4 rounded-xl font-bold text-white bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-shadow duration-300 overflow-hidden"
+            className="btn-shine relative group w-full sm:w-auto px-8 py-3.5 md:py-4 rounded-xl font-bold text-white bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-shadow duration-300 overflow-hidden"
           >
             <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 opacity-0 blur-lg group-hover:opacity-40 transition-opacity duration-300" />
             <div className="absolute inset-0 bg-gradient-to-r from-orange-700 via-amber-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

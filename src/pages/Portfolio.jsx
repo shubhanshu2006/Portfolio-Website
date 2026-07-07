@@ -15,7 +15,6 @@ import Education from "../sections/Education";
 import Projects from "../sections/Projects";
 import Achievements from "../sections/Achievements";
 import Hackathons from "../sections/Hackathons";
-import CodePhilosophy from "../sections/CodePhilosophy";
 import Contact from "../sections/Contact";
 import CustomCursor from "../components/CustomCursor";
 import { AuroraBackground } from "@/components/ui/aurora-background";
@@ -50,7 +49,6 @@ export default function Portfolio() {
         <Education />
         <Achievements />
         <Hackathons />
-        <CodePhilosophy />
         <Projects />
         <GitHubStats />
         <Contact />
