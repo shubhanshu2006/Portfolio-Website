@@ -77,12 +77,12 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="flex items-center justify-center w-10 h-10 rounded-[14px] bg-linear-to-br from-blue-500 via-indigo-500 to-purple-600 shadow-md group-hover:shadow-indigo-500/50 transition-shadow duration-300 relative z-10">
+              <div className="flex items-center justify-center w-10 h-10 rounded-[14px] bg-linear-to-br from-orange-500 via-amber-500 to-yellow-600 shadow-md group-hover:shadow-orange-500/50 transition-shadow duration-300 relative z-10">
                 <span className="text-base font-black text-white tracking-tight">
                   SS
                 </span>
               </div>
-              <div className="absolute -inset-1 bg-linear-to-br from-blue-500 via-indigo-500 to-purple-600 rounded-[16px] blur opacity-20 group-hover:opacity-40 transition-opacity duration-300 -z-10" />
+              <div className="absolute -inset-1 bg-linear-to-br from-orange-500 via-amber-500 to-yellow-600 rounded-[16px] blur opacity-20 group-hover:opacity-40 transition-opacity duration-300 -z-10" />
             </Motion.a>
 
             {/* Desktop Navigation Links */}
@@ -101,7 +101,7 @@ export default function Navbar() {
                   {activeSection === link.href.substring(1) && (
                     <Motion.div
                       layoutId="activeNavSection"
-                      className="absolute inset-0 bg-linear-to-r from-blue-500 to-indigo-500 rounded-full -z-10 shadow-sm"
+                      className="absolute inset-0 bg-linear-to-r from-orange-500 to-amber-500 rounded-full -z-10 shadow-sm"
                       transition={{
                         type: "spring",
                         stiffness: 400,
@@ -148,7 +148,7 @@ export default function Navbar() {
                   transition={{ delay: index * 0.03 }}
                   onClick={() => scrollToSection(link.href)}
                   className={`px-5 py-3.5 mb-1 rounded-2xl text-left text-sm font-bold transition-all ${activeSection === link.href.substring(1)
-                      ? "text-white bg-linear-to-r from-blue-500 to-indigo-500 shadow-md"
+                      ? "text-white bg-linear-to-r from-orange-500 to-amber-500 shadow-md"
                       : "text-black/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10"
                     }`}
                 >

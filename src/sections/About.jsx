@@ -12,13 +12,13 @@ export default function About() {
         className="text-center mb-12"
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
-          <User className="w-4 h-4 text-blue-500" />
+          <User className="w-4 h-4 text-orange-500" />
           <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
             Get To Know Me
           </span>
         </div>
         <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Me.</span>
+          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">Me.</span>
         </h2>
         <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           Passionate about creating impactful digital experiences
@@ -36,20 +36,20 @@ export default function About() {
           <Motion.div
             animate={{ opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="absolute -inset-1 bg-linear-to-r from-blue-500 via-cyan-500 to-teal-500 rounded-3xl blur opacity-20"
+            className="absolute -inset-1 bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-3xl blur opacity-20"
           />
 
           <div className="relative bg-white dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 rounded-3xl p-8 md:p-12 border border-black/10 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/30 backdrop-blur-sm">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-bl from-blue-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-bl from-orange-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3" />
 
             <div className="relative">
               <p className="text-lg md:text-xl leading-relaxed text-black/80 dark:text-white/80 font-medium">
                 I am a{" "}
-                <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
+                <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
                   Full-Stack Developer
                 </span>{" "}
                 with practical experience in modern web technologies such as{" "}
-                <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
+                <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
                   JavaScript, TypeScript, React, Node.js, NextJs and Python.
                 </span>{" "}
                 I specialize in building scalable, maintainable applications
@@ -67,27 +67,27 @@ export default function About() {
                 <Motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-400/10 border border-blue-200 dark:border-blue-900"
+                  className="px-4 py-2 rounded-full bg-orange-500/10 dark:bg-orange-400/10 border border-orange-200 dark:border-orange-900"
                 >
-                  <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                  <span className="text-sm font-semibold text-orange-600 dark:text-orange-400">
                     🎓 Continuous Learning
                   </span>
                 </Motion.div>
                 <Motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-400/10 border border-blue-200 dark:border-blue-900"
+                  className="px-4 py-2 rounded-full bg-orange-500/10 dark:bg-orange-400/10 border border-orange-200 dark:border-orange-900"
                 >
-                  <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+                  <span className="text-sm font-semibold text-amber-600 dark:text-amber-400">
                     💡 Problem Solving
                   </span>
                 </Motion.div>
                 <Motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-400/10 border border-blue-200 dark:border-blue-900"
+                  className="px-4 py-2 rounded-full bg-orange-500/10 dark:bg-orange-400/10 border border-orange-200 dark:border-orange-900"
                 >
-                  <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
+                  <span className="text-sm font-semibold text-yellow-600 dark:text-yellow-400">
                     🚀 Innovation Focus
                   </span>
                 </Motion.div>

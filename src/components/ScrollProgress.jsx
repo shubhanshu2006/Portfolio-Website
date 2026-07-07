@@ -25,7 +25,7 @@ export default function ScrollProgress() {
       transition={{ delay: 0.5 }}
     >
       <Motion.div
-        className="h-full bg-linear-to-r from-blue-500  to-purple-500 shadow-lg shadow-blue-500/50"
+        className="h-full bg-linear-to-r from-orange-500  to-amber-500 shadow-lg shadow-orange-500/50"
         style={{ width: `${scrollProgress}%` }}
         transition={{ duration: 0.1 }}
       />

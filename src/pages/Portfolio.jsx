@@ -73,7 +73,7 @@ export default function Portfolio() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-br from-blue-500 via-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/30 mb-5">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-br from-orange-500 via-amber-500 to-yellow-600 shadow-lg shadow-orange-500/30 mb-5">
               <span className="text-base font-black text-white tracking-tight">
                 SS
               </span>

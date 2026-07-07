@@ -45,13 +45,13 @@ export default function Achievements() {
         className="text-center mb-12"
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
-          <Trophy className="w-4 h-4 text-blue-500" />
+          <Trophy className="w-4 h-4 text-orange-500" />
           <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
             Accomplishments
           </span>
         </div>
         <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-          Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Achievements.</span>
+          Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">Achievements.</span>
         </h2>
         <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           Milestones and recognitions throughout my journey
@@ -63,7 +63,7 @@ export default function Achievements() {
           animate={{ opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 6, repeat: Infinity }}
           className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 
-          bg-linear-to-b from-blue-500 via-indigo-500 to-purple-500 hidden md:block"
+          bg-linear-to-b from-orange-500 via-amber-500 to-yellow-500 hidden md:block"
         />
 
         {achievements.map((item, i) => (
@@ -78,10 +78,10 @@ export default function Achievements() {
           >
             <div
               className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full 
-              bg-linear-to-r from-blue-500 to-indigo-500 
+              bg-linear-to-r from-orange-500 to-amber-500 
               border-4 border-white dark:border-zinc-900 
               transform -translate-x-1/2 hidden md:block z-10 
-              shadow-lg shadow-blue-500/50"
+              shadow-lg shadow-orange-500/50"
             />
 
             <div
@@ -97,7 +97,7 @@ export default function Achievements() {
                   animate={{ opacity: [0.1, 0.25, 0.1] }}
                   transition={{ duration: 4, repeat: Infinity }}
                   className="absolute -inset-1 
-                  bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500 
+                  bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500 
                   rounded-2xl blur opacity-20"
                 />
 
@@ -108,10 +108,10 @@ export default function Achievements() {
                   shadow-2xl shadow-black/10 dark:shadow-black/30 overflow-hidden"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 rounded-full bg-blue-500/20">
-                      <Calendar className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                    <div className="p-2 rounded-full bg-orange-500/20">
+                      <Calendar className="w-5 h-5 text-orange-600 dark:text-orange-400" />
                     </div>
-                    <span className="text-sm font-bold text-blue-700 dark:text-blue-300">
+                    <span className="text-sm font-bold text-orange-700 dark:text-orange-300">
                       {item.date}
                     </span>
                   </div>
@@ -122,8 +122,8 @@ export default function Achievements() {
 
                   <div
                     className="inline-block px-3 py-1.5 rounded-full text-xs font-bold 
-                    bg-linear-to-r from-blue-500 to-indigo-500 text-white 
-                    shadow-lg shadow-blue-500/30 mb-4"
+                    bg-linear-to-r from-orange-500 to-amber-500 text-white 
+                    shadow-lg shadow-orange-500/30 mb-4"
                   >
                     {item.subtitle}
                   </div>
@@ -135,7 +135,7 @@ export default function Achievements() {
                         className="flex items-start gap-3 text-sm 
                         text-black/70 dark:text-white/70"
                       >
-                        <span className="text-blue-500 dark:text-blue-400 mt-1 font-bold">
+                        <span className="text-orange-500 dark:text-orange-400 mt-1 font-bold">
                           •
                         </span>
                         <span className="leading-relaxed">{point}</span>

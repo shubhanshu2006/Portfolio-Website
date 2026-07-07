@@ -29,7 +29,7 @@
 }
 
 *:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #ff6b35;
   outline-offset: 2px;
   border-radius: 0.25rem;
 }
@@ -109,7 +109,7 @@ body {
   width: 260px;
   height: 260px;
   border-radius: 999px;
-  background: radial-gradient(circle, #ff4d8d, #ff3f7c);
+  background: radial-gradient(circle, #ff6b35, #f7931e);
   filter: blur(44px);
   opacity: 0.36;
   position: absolute;
@@ -205,12 +205,12 @@ body {
   position: absolute;
   inset: -8px;
   border-radius: 50%;
-  border: 2px solid rgba(59, 130, 246, 0.3);
+  border: 2px solid rgba(255, 107, 53, 0.4);
   animation: ringPulse 3s ease-in-out infinite;
 }
 
 .dark .hero-photo-ring {
-  border-color: rgba(147, 197, 253, 0.3);
+  border-color: rgba(255, 179, 71, 0.4);
 }
 
 @keyframes ringPulse {
@@ -262,13 +262,13 @@ body {
 .hero-tag-large {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #3b82f6;
+  color: #ff6b35;
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
 }
 
 .dark .hero-tag-large {
-  color: #93c5fd;
+  color: #ffb347;
 }
 
 @media (min-width: 768px) {
@@ -410,7 +410,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.4);
   background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(4px);
-  box-shadow: 0 0 60px rgba(244, 114, 182, 0.18);
+  box-shadow: 0 0 60px rgba(255, 107, 53, 0.18);
   margin-bottom: 0.4rem;
   object-fit: cover;
   object-position: center;
@@ -587,6 +587,35 @@ body {
 html,
 body {
   overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 @media (max-width: 768px) {

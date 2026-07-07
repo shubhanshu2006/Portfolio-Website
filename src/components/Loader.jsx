@@ -44,7 +44,7 @@ export default function Loader({ onLoadComplete = () => {} }) {
     >
       <div className="relative">
         <div className="absolute inset-0 blur-3xl opacity-30">
-          <div className="w-48 h-48 md:w-64 md:h-64 bg-linear-to-r from-blue-400 via-blue-500 to-blue-600 rounded-full animate-pulse" />
+          <div className="w-48 h-48 md:w-64 md:h-64 bg-linear-to-r from-orange-400 via-amber-500 to-orange-600 rounded-full animate-pulse" />
         </div>
 
         <div className="relative z-10 text-center px-4">
@@ -61,7 +61,7 @@ export default function Loader({ onLoadComplete = () => {} }) {
                     : "opacity-0 scale-110 translate-y-12 blur-sm")
                 }
               >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-linear-to-r from-blue-400 via-blue-300 to-blue-500 bg-clip-text text-transparent tracking-wide">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-linear-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent tracking-wide">
                   {n.text}
                 </h1>
               </div>
@@ -75,7 +75,7 @@ export default function Loader({ onLoadComplete = () => {} }) {
                 className={
                   "h-1 md:h-1.5 rounded-full transition-all " +
                   (i < currentIndex
-                    ? "w-6 md:w-8 bg-blue-400"
+                    ? "w-6 md:w-8 bg-orange-400"
                     : "w-1 md:w-1.5 bg-gray-700")
                 }
               />
@@ -86,15 +86,15 @@ export default function Loader({ onLoadComplete = () => {} }) {
 
       <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex gap-1 md:gap-1.5">
         <div
-          className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-blue-400 animate-bounce"
+          className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-orange-400 animate-bounce"
           style={{ animationDelay: "0ms" }}
         />
         <div
-          className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-blue-400 animate-bounce"
+          className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-orange-400 animate-bounce"
           style={{ animationDelay: "150ms" }}
         />
         <div
-          className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-blue-400 animate-bounce"
+          className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-orange-400 animate-bounce"
           style={{ animationDelay: "300ms" }}
         />
       </div>

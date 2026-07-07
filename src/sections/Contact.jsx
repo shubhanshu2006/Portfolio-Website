@@ -71,14 +71,14 @@ export default function Contact() {
       >
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
-            <Mail className="w-4 h-4 text-blue-500" />
+            <Mail className="w-4 h-4 text-orange-500" />
             <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
               Get In Touch
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
             Let's{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
               Connect.
             </span>
           </h2>
@@ -90,7 +90,7 @@ export default function Contact() {
         </div>
 
         <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-[2.5rem] blur-2xl opacity-30 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" />
+          <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-[2.5rem] blur-2xl opacity-30 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" />
 
           <div className="relative bg-white dark:bg-zinc-900/90 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 border border-black/5 dark:border-white/10 shadow-[0_20px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_20px_40px_rgb(0,0,0,0.3)]">
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -105,7 +105,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800 border-2 border-transparent focus:border-blue-500/50 outline-none transition-all duration-300 text-black dark:text-white shadow-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800 border-2 border-transparent focus:border-orange-500/50 outline-none transition-all duration-300 text-black dark:text-white shadow-sm"
                     placeholder="John Doe"
                   />
                 </div>
@@ -119,7 +119,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800 border-2 border-transparent focus:border-purple-500/50 outline-none transition-all duration-300 text-black dark:text-white shadow-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800 border-2 border-transparent focus:border-amber-500/50 outline-none transition-all duration-300 text-black dark:text-white shadow-sm"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -135,7 +135,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800 border-2 border-transparent focus:border-cyan-500/50 outline-none transition-all duration-300 text-black dark:text-white shadow-sm resize-none"
+                  className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800 border-2 border-transparent focus:border-yellow-500/50 outline-none transition-all duration-300 text-black dark:text-white shadow-sm resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 ></textarea>
               </div>
@@ -151,7 +151,7 @@ export default function Contact() {
               >
                 {status === "idle" && (
                   <>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 hover:opacity-10 dark:hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-amber-600 opacity-0 hover:opacity-10 dark:hover:opacity-100 transition-opacity duration-300" />
                     <span className="relative z-10 flex items-center gap-2">
                       Send Message <Send className="w-4 h-4 ml-2" />
                     </span>

@@ -355,13 +355,13 @@ export default function GitHubStats() {
       >
         <div className="text-center mb-20 md:mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/10 shadow-sm mb-8 backdrop-blur-md">
-            <Github className="w-4 h-4 text-blue-500" />
+            <Github className="w-4 h-4 text-orange-500" />
             <span className="text-xs font-bold text-black/70 dark:text-white/70 uppercase tracking-widest">
               GitHub Activity
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-            Streak & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Contributions.</span>
+            Streak & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">Contributions.</span>
           </h2>
           <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
             Track my coding journey with real-time GitHub statistics and contribution patterns.
@@ -401,7 +401,7 @@ export default function GitHubStats() {
                   icon={TrendingUp}
                   label="Last Year"
                   value={lastYearTotal.toLocaleString()}
-                  bgColor="bg-linear-to-br from-blue-500 to-cyan-600"
+                  bgColor="bg-linear-to-br from-orange-500 to-amber-600"
                   delay={0.1}
                 />
                 <StatCard
@@ -415,7 +415,7 @@ export default function GitHubStats() {
                   icon={Activity}
                   label="Longest Streak"
                   value={`${longestStreak} days`}
-                  bgColor="bg-linear-to-br from-purple-500 to-pink-600"
+                  bgColor="bg-linear-to-br from-yellow-500 to-orange-600"
                   delay={0.3}
                 />
               </div>

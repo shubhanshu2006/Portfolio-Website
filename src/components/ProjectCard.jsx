@@ -19,7 +19,7 @@ export default function ProjectCard({
     >
       {/* Featured Gradient Glow */}
       {featured && (
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-[2rem] blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
+        <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-[2rem] blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
       )}
 
       <div className="relative z-10 flex flex-col h-full bg-white dark:bg-zinc-900/90 backdrop-blur-xl rounded-[2rem] overflow-hidden">
@@ -54,7 +54,7 @@ export default function ProjectCard({
 
         {/* Text Section */}
         <div className="flex-1 flex flex-col p-6 sm:p-7 bg-white dark:bg-zinc-900">
-          <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-2 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400 transition-all duration-300">
+          <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-2 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-300">
             {title}
           </h3>
 

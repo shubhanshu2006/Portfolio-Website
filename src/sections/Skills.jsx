@@ -103,7 +103,7 @@ export default function Skills() {
           </span>
         </div>
         <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-          Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500 dark:from-emerald-400 dark:to-teal-400">Skills.</span>
+          Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 dark:from-orange-400 dark:to-amber-400">Skills.</span>
         </h2>
         <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           Technologies and tools I use to bring ideas to life
@@ -120,13 +120,13 @@ export default function Skills() {
             transition={{ duration: 0.5 }}
             className="relative group"
           >
-            <div className="absolute -inset-1 bg-linear-to-r from-purple-500 via-pink-500 to-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+            <div className="absolute -inset-1 bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
 
             <div className="relative rounded-2xl bg-white dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 border border-black/10 dark:border-white/10 p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-black/15 dark:hover:shadow-white/10 overflow-hidden group">
               <div className="absolute inset-0 bg-linear-to-br from-transparent to-black/2 dark:to-white/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-bl from-purple-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-linear-to-tr from-blue-500/10 to-transparent rounded-full translate-y-1/2 -translate-x-1/4" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-bl from-orange-500/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-linear-to-tr from-amber-500/10 to-transparent rounded-full translate-y-1/2 -translate-x-1/4" />
 
               <h3 className="relative text-xl font-bold text-black dark:text-white mb-5 text-center">
                 {section.title}
