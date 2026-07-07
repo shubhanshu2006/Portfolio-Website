@@ -3,6 +3,10 @@ import { motion as Motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice] = useState(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return true;
+    return window.matchMedia("(pointer: coarse)").matches;
+  });
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -22,6 +26,8 @@ export default function CustomCursor() {
   });
 
   useEffect(() => {
+    if (isTouchDevice) return;
+
     const updateMousePosition = (e) => {
       cursorX.set(e.clientX - 6);
       cursorY.set(e.clientY - 6);
@@ -54,6 +60,8 @@ export default function CustomCursor() {
       window.removeEventListener("mouseover", handleMouseOver);
     };
   }, []);
+
+  if (isTouchDevice) return null;
 
   return (
     <>

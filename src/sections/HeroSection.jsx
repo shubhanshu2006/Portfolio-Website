@@ -6,8 +6,16 @@ import GithubIcon from "../assets/github.svg";
 import LinkedinIcon from "../assets/linkedin.svg";
 import XIcon from "../assets/x.svg";
 import GmailIcon from "../assets/gmail.svg";
+import LeetcodeIcon from "../assets/leetcode.svg";
 
-import { Sun, Moon, ChevronDown, Rocket, Download, Sparkles } from "lucide-react";
+import {
+  Sun,
+  Moon,
+  ChevronDown,
+  Rocket,
+  Download,
+  Sparkles,
+} from "lucide-react";
 
 export default function HeroSection() {
   const [showSocials, setShowSocials] = useState(false);
@@ -28,26 +36,65 @@ export default function HeroSection() {
     return () => clearTimeout(t);
   }, []);
 
-  const toggleTheme = () => {
+  const toggleTheme = (event) => {
     const html = document.documentElement;
+    const goingDark = !html.classList.contains("dark");
 
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
+    const applyTheme = () => {
+      if (goingDark) {
+        html.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+    };
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!document.startViewTransition || reduceMotion) {
+      applyTheme();
+      return;
     }
+
+    const x = event?.clientX ?? window.innerWidth / 2;
+    const y = event?.clientY ?? window.innerHeight / 2;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    const transition = document.startViewTransition(applyTheme);
+
+    transition.ready.then(() => {
+      html.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 650,
+          easing: "ease-in-out",
+          pseudoElement: "::view-transition-new(root)",
+        },
+      );
+    });
   };
 
   return (
-    <section id="home" className="relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden px-4 md:px-8 py-20">
+    <section
+      id="home"
+      className="relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden px-4 md:px-8 py-20"
+    >
       {/* Premium Background Blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-gradient-to-tr from-orange-500/10 via-amber-500/10 to-yellow-500/10 dark:from-orange-500/20 dark:via-amber-500/20 dark:to-yellow-500/20 blur-[130px] rounded-full pointer-events-none -z-10" />
 
       {/* Hero Content Container - Centered between Navbar and Bottom Bar */}
       <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto z-10 pt-4">
-
         <Motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -68,7 +115,12 @@ export default function HeroSection() {
               <Motion.div
                 initial={{ rotate: -10 }}
                 animate={{ rotate: 10 }}
-                transition={{ repeat: Infinity, repeatType: "reverse", duration: 1, ease: "easeInOut" }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 1,
+                  ease: "easeInOut",
+                }}
                 className="absolute bottom-0 -right-2 bg-white dark:bg-zinc-800 p-2 rounded-full shadow-xl border border-black/5 dark:border-white/10 z-20"
               >
                 <span className="text-xl leading-none block">👋</span>
@@ -140,7 +192,12 @@ export default function HeroSection() {
             initial={{ y: 0 }}
             whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.98, y: 0 }}
-            transition={{ type: "spring", stiffness: 180, damping: 18, mass: 0.6 }}
+            transition={{
+              type: "spring",
+              stiffness: 180,
+              damping: 18,
+              mass: 0.6,
+            }}
             className="relative group w-full sm:w-auto px-8 py-3.5 md:py-4 rounded-xl font-bold text-white bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-shadow duration-300 overflow-hidden"
           >
             <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 opacity-0 blur-lg group-hover:opacity-40 transition-opacity duration-300" />
@@ -157,7 +214,12 @@ export default function HeroSection() {
             initial={{ y: 0 }}
             whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.98, y: 0 }}
-            transition={{ type: "spring", stiffness: 260, damping: 22, mass: 0.5 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 22,
+              mass: 0.5,
+            }}
             className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-black dark:text-white bg-white/10 dark:bg-white/5 border-2 border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 hover:bg-white/20 dark:hover:bg-white/10 backdrop-blur-md transition-colors duration-300 flex items-center justify-center gap-2 text-sm md:text-base"
           >
             View Resume <Download className="w-4 h-4 ml-1" />
@@ -170,7 +232,11 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
           className="mt-6 md:mt-8 cursor-pointer flex flex-col items-center group pointer-events-auto z-20 pb-16 md:pb-8"
-          onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+          onClick={() =>
+            document
+              .getElementById("about")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
         >
           <span className="text-[10px] font-bold uppercase tracking-widest text-black/40 dark:text-white/40 mb-1.5 group-hover:text-black/70 dark:group-hover:text-white/70 transition-colors duration-300">
             Scroll Down
@@ -185,7 +251,6 @@ export default function HeroSection() {
         </Motion.div>
       </div>
 
-      {/* Kept original social bar structure requested by user */}
       <div className={`social-fixed ${showSocials ? "social-show" : ""}`}>
         <div className="social-bar">
           <a
@@ -195,6 +260,15 @@ export default function HeroSection() {
             data-label="GitHub"
           >
             <img src={GithubIcon} className="w-5 h-5 dark:invert" />
+          </a>
+
+          <a
+            href="https://leetcode.com/u/shubhanshu_18/"
+            target="_blank"
+            className="social-item hover:scale-110 hover:-translate-y-1 transition-transform"
+            data-label="LeetCode"
+          >
+            <img src={LeetcodeIcon} className="w-5 h-5 dark:invert" />
           </a>
 
           <a

@@ -92,7 +92,7 @@ export default function Skills() {
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-100px" }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-12"
       >
@@ -103,7 +103,10 @@ export default function Skills() {
           </span>
         </div>
         <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-          Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 dark:from-orange-400 dark:to-amber-400">Skills.</span>
+          Technical{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 dark:from-orange-400 dark:to-amber-400">
+            Skills.
+          </span>
         </h2>
         <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           Technologies and tools I use to bring ideas to life
@@ -116,7 +119,7 @@ export default function Skills() {
             key={i}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="relative group"
           >

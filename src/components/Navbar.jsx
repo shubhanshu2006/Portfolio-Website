@@ -22,7 +22,9 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updateScrollState = () => {
       setIsScrolled(window.scrollY > 50);
 
       const sections = navLinks.map((link) => link.href.substring(1));
@@ -36,9 +38,18 @@ export default function Navbar() {
           }
         }
       }
+
+      ticking = false;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateScrollState);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -61,10 +72,11 @@ export default function Navbar() {
       >
         <div className="max-w-[95%] lg:max-w-7xl mx-auto">
           <div
-            className={`flex items-center justify-between p-2 pl-3 rounded-[2rem] md:rounded-full transition-all duration-500 ease-out will-change-[background-color,backdrop-filter,box-shadow,border] border ${isScrolled
+            className={`flex items-center justify-between p-2 pl-3 rounded-[2rem] md:rounded-full transition-all duration-500 ease-out will-change-[background-color,backdrop-filter,box-shadow,border] border ${
+              isScrolled
                 ? "bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] border-black/10 dark:border-white/10"
                 : "bg-white/30 dark:bg-zinc-900/30 backdrop-blur-md shadow-sm border-black/5 dark:border-white/5"
-              }`}
+            }`}
           >
             {/* Logo Section */}
             <Motion.a
@@ -91,10 +103,11 @@ export default function Navbar() {
                 <Motion.button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className={`relative px-3 py-2 text-[13px] font-semibold rounded-full transition-all duration-200 ${activeSection === link.href.substring(1)
+                  className={`relative px-3 py-2 text-[13px] font-semibold rounded-full transition-all duration-200 ${
+                    activeSection === link.href.substring(1)
                       ? "text-white"
                       : "text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
-                    }`}
+                  }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -147,10 +160,11 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.03 }}
                   onClick={() => scrollToSection(link.href)}
-                  className={`px-5 py-3.5 mb-1 rounded-2xl text-left text-sm font-bold transition-all ${activeSection === link.href.substring(1)
+                  className={`px-5 py-3.5 mb-1 rounded-2xl text-left text-sm font-bold transition-all ${
+                    activeSection === link.href.substring(1)
                       ? "text-white bg-linear-to-r from-orange-500 to-amber-500 shadow-md"
                       : "text-black/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10"
-                    }`}
+                  }`}
                 >
                   {link.name}
                 </Motion.button>

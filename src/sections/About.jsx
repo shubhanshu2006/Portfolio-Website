@@ -7,7 +7,7 @@ export default function About() {
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-100px" }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-12"
       >
@@ -18,7 +18,10 @@ export default function About() {
           </span>
         </div>
         <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">Me.</span>
+          About{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
+            Me.
+          </span>
         </h2>
         <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           Passionate about creating impactful digital experiences
@@ -28,16 +31,12 @@ export default function About() {
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-100px" }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="max-w-4xl mx-auto"
       >
         <div className="relative group">
-          <Motion.div
-            animate={{ opacity: [0.2, 0.4, 0.2] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="absolute -inset-1 bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-3xl blur opacity-20"
-          />
+          <div className="glow-pulse-soft absolute -inset-1 bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-3xl blur" />
 
           <div className="relative bg-white dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 rounded-3xl p-8 md:p-12 border border-black/10 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/30 backdrop-blur-sm">
             <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-bl from-orange-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3" />
@@ -60,7 +59,7 @@ export default function About() {
               <Motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
                 className="mt-6 flex flex-wrap gap-3"
               >

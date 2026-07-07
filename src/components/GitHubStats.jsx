@@ -349,7 +349,7 @@ export default function GitHubStats() {
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-100px" }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
         className="max-w-7xl mx-auto relative z-10"
       >
@@ -361,10 +361,14 @@ export default function GitHubStats() {
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-            Streak & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">Contributions.</span>
+            Streak &{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
+              Contributions.
+            </span>
           </h2>
           <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
-            Track my coding journey with real-time GitHub statistics and contribution patterns.
+            Track my coding journey with real-time GitHub statistics and
+            contribution patterns.
           </p>
         </div>
 
@@ -426,7 +430,7 @@ export default function GitHubStats() {
           <Motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex justify-center"
           >

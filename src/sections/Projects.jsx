@@ -83,7 +83,6 @@ export default function Projects() {
     },
   ];
 
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -117,7 +116,7 @@ export default function Projects() {
         <Motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-20"
         >
@@ -145,7 +144,7 @@ export default function Projects() {
               key={i}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-100px" }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
               className="w-full lg:w-[calc(50%-1.25rem)]"
             >
@@ -157,7 +156,7 @@ export default function Projects() {
         <Motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="flex justify-center mt-20"
         >

@@ -59,7 +59,7 @@ export default function Portfolio() {
           <Motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           ></Motion.div>
@@ -69,7 +69,7 @@ export default function Portfolio() {
           <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >

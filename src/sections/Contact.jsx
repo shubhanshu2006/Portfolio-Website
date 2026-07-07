@@ -4,7 +4,11 @@ import { Mail, Send, CheckCircle } from "lucide-react";
 
 export default function Contact() {
   const [status, setStatus] = useState("idle");
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,19 +16,22 @@ export default function Contact() {
 
     try {
       // Using FormSubmit for background email sending without a backend
-      const response = await fetch("https://formsubmit.co/ajax/shubhanshus450@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+      const response = await fetch(
+        "https://formsubmit.co/ajax/shubhanshus450@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: `New Portfolio Message from ${formData.name}`,
+          }),
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          _subject: `New Portfolio Message from ${formData.name}`,
-        }),
-      });
+      );
 
       if (response.ok) {
         setStatus("success");
@@ -38,9 +45,11 @@ export default function Contact() {
     } catch (error) {
       console.error(error);
       // Fallback to local mail client if fetch fails
-      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const subject = encodeURIComponent(
+        `Portfolio Contact from ${formData.name}`,
+      );
       const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
       );
 
       window.location.href = `mailto:shubhanshus450@gmail.com?subject=${subject}&body=${body}`;
@@ -65,7 +74,7 @@ export default function Contact() {
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-100px" }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="max-w-4xl mx-auto relative z-10"
       >
@@ -135,7 +144,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800 border-2 border-transparent focus:border-yellow-500/50 outline-none transition-all duration-300 text-black dark:text-white shadow-sm resize-none"
+                  className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-800 border-2 border-transparent focus:border-amber-500/50 outline-none transition-all duration-300 text-black dark:text-white shadow-sm resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 ></textarea>
               </div>
@@ -144,10 +153,11 @@ export default function Contact() {
                 whileHover={status === "idle" ? { scale: 1.02 } : {}}
                 whileTap={status === "idle" ? { scale: 0.98 } : {}}
                 disabled={status !== "idle"}
-                className={`relative overflow-hidden w-full py-4 rounded-2xl font-bold shadow-xl transition-all duration-300 flex items-center justify-center gap-2 ${status === "success"
-                  ? "bg-green-500 text-white"
-                  : "bg-black text-white dark:bg-white dark:text-black hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
-                  }`}
+                className={`relative overflow-hidden w-full py-4 rounded-2xl font-bold shadow-xl transition-all duration-300 flex items-center justify-center gap-2 ${
+                  status === "success"
+                    ? "bg-green-500 text-white"
+                    : "bg-black text-white dark:bg-white dark:text-black hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
+                }`}
               >
                 {status === "idle" && (
                   <>

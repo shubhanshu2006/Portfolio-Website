@@ -40,7 +40,7 @@ export default function Achievements() {
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-100px" }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-12"
       >
@@ -51,7 +51,10 @@ export default function Achievements() {
           </span>
         </div>
         <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-          Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">Achievements.</span>
+          Key{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
+            Achievements.
+          </span>
         </h2>
         <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
           Milestones and recognitions throughout my journey
@@ -59,10 +62,8 @@ export default function Achievements() {
       </Motion.div>
 
       <div className="max-w-4xl mx-auto relative">
-        <Motion.div
-          animate={{ opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 6, repeat: Infinity }}
-          className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 
+        <div
+          className="glow-pulse-strong absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5
           bg-linear-to-b from-orange-500 via-amber-500 to-yellow-500 hidden md:block"
         />
 
@@ -71,40 +72,40 @@ export default function Achievements() {
             key={i}
             initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-50px" }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-            className={`relative flex flex-col md:flex-row items-center gap-8 mb-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
+            className={`relative flex flex-col md:flex-row items-center gap-8 mb-12 ${
+              i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            }`}
           >
             <div
-              className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full 
-              bg-linear-to-r from-orange-500 to-amber-500 
-              border-4 border-white dark:border-zinc-900 
-              transform -translate-x-1/2 hidden md:block z-10 
+              className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full
+              bg-linear-to-r from-orange-500 to-amber-500
+              border-4 border-white dark:border-zinc-900
+              transform -translate-x-1/2 hidden md:block z-10
               shadow-lg shadow-orange-500/50"
             />
 
             <div
-              className={`w-full md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-8" : "md:pl-8"
-                }`}
+              className={`w-full md:w-[calc(50%-2rem)] ${
+                i % 2 === 0 ? "md:pr-8" : "md:pl-8"
+              }`}
             >
               <Motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
                 className="relative group"
               >
-                <Motion.div
-                  animate={{ opacity: [0.1, 0.25, 0.1] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -inset-1 
-                  bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500 
-                  rounded-2xl blur opacity-20"
+                <div
+                  className="glow-pulse-faint absolute -inset-1
+                  bg-linear-to-r from-orange-500 via-amber-500 to-yellow-500
+                  rounded-2xl blur"
                 />
 
                 <div
-                  className="relative bg-white 
-                  dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950 
-                  rounded-2xl p-6 border border-black/10 dark:border-white/10 
+                  className="relative bg-white
+                  dark:bg-linear-to-br dark:from-zinc-900 dark:to-zinc-950
+                  rounded-2xl p-6 border border-black/10 dark:border-white/10
                   shadow-2xl shadow-black/10 dark:shadow-black/30 overflow-hidden"
                 >
                   <div className="flex items-center gap-3 mb-4">
@@ -121,8 +122,8 @@ export default function Achievements() {
                   </h3>
 
                   <div
-                    className="inline-block px-3 py-1.5 rounded-full text-xs font-bold 
-                    bg-linear-to-r from-orange-500 to-amber-500 text-white 
+                    className="inline-block px-3 py-1.5 rounded-full text-xs font-bold
+                    bg-linear-to-r from-orange-500 to-amber-500 text-white
                     shadow-lg shadow-orange-500/30 mb-4"
                   >
                     {item.subtitle}
@@ -132,7 +133,7 @@ export default function Achievements() {
                     {item.points.map((point, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-3 text-sm 
+                        className="flex items-start gap-3 text-sm
                         text-black/70 dark:text-white/70"
                       >
                         <span className="text-orange-500 dark:text-orange-400 mt-1 font-bold">

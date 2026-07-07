@@ -26,7 +26,7 @@ optimizeExperience(me, you);`;
         <Motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex-1 space-y-8"
         >
@@ -38,7 +38,10 @@ optimizeExperience(me, you);`;
               </span>
             </div>
             <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-              Code as <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">Craft.</span>
+              Code as{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
+                Craft.
+              </span>
             </h2>
           </div>
 

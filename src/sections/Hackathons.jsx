@@ -15,7 +15,7 @@ export default function Hackathons() {
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-100px" }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center mb-16"
       >
@@ -26,10 +26,14 @@ export default function Hackathons() {
           </span>
         </div>
         <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black dark:text-white">
-          Hackathons <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">& IRL.</span>
+          Hackathons{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
+            & IRL.
+          </span>
         </h2>
         <p className="text-lg md:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto font-medium leading-relaxed">
-          Building things, meeting people, and winning caffeine-fueled hackathons.
+          Building things, meeting people, and winning caffeine-fueled
+          hackathons.
         </p>
       </Motion.div>
 
@@ -59,18 +63,23 @@ export default function Hackathons() {
                 key={i}
                 className="relative w-80 h-56 shrink-0 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] border border-white/10 shadow-2xl bg-black/10 dark:bg-white/5 group"
               >
-                {/* Backing blur to fill the card beautifully without cropping main subject */}
+                {/* Backing blur to fill the card beautifully without cropping main subject.
+                    Blur/backdrop-blur filters are skipped on mobile: with this many
+                    cards continuously translating, stacked blur layers are expensive
+                    for mobile GPUs to keep compositing. */}
                 <div className="absolute inset-0 z-0">
                   <img
                     src={src}
-                    className="w-full h-full object-cover blur-xl opacity-50 scale-125 saturate-150"
+                    loading="lazy"
+                    className="w-full h-full object-cover opacity-50 scale-125 saturate-150 md:blur-xl"
                     alt=""
                     aria-hidden="true"
                   />
-                  <div className="absolute inset-0 bg-black/30 dark:bg-black/50 backdrop-blur-sm" />
+                  <div className="absolute inset-0 bg-black/30 dark:bg-black/50 md:backdrop-blur-sm" />
                 </div>
                 <img
                   src={src}
+                  loading="lazy"
                   className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
                   alt="Hackathon"
                 />
@@ -98,14 +107,16 @@ export default function Hackathons() {
                 <div className="absolute inset-0 z-0">
                   <img
                     src={src}
-                    className="w-full h-full object-cover blur-xl opacity-50 scale-125 saturate-150"
+                    loading="lazy"
+                    className="w-full h-full object-cover opacity-50 scale-125 saturate-150 md:blur-xl"
                     alt=""
                     aria-hidden="true"
                   />
-                  <div className="absolute inset-0 bg-black/30 dark:bg-black/50 backdrop-blur-sm" />
+                  <div className="absolute inset-0 bg-black/30 dark:bg-black/50 md:backdrop-blur-sm" />
                 </div>
                 <img
                   src={src}
+                  loading="lazy"
                   className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
                   alt="Hackathon"
                 />

@@ -147,7 +147,9 @@ body {
   align-items: center;
   padding-top: 0;
   text-align: center;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .dark .hero-section {
@@ -496,9 +498,11 @@ body {
   width: 46px;
   height: 46px;
   border-radius: 999px;
-  background: radial-gradient(circle,
-      rgba(255, 255, 255, 0.25),
-      transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
   opacity: 0;
   filter: blur(12px);
   transform: scale(0.75);
@@ -531,7 +535,6 @@ body {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
-
 
 section[id] {
   scroll-margin-top: 80px;
@@ -604,8 +607,8 @@ body::-webkit-scrollbar {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 html {
@@ -614,8 +617,8 @@ html {
 }
 
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 @media (max-width: 768px) {
@@ -729,4 +732,68 @@ body {
   .scroll-indicator {
     display: none;
   }
+}
+
+@keyframes glowPulseFaint {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes glowPulseSoft {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes glowPulseStrong {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.glow-pulse-faint {
+  animation: glowPulseFaint 4s ease-in-out infinite;
+}
+
+.glow-pulse-soft {
+  animation: glowPulseSoft 4s ease-in-out infinite;
+}
+
+.glow-pulse-strong {
+  animation: glowPulseStrong 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-pulse-faint,
+  .glow-pulse-soft,
+  .glow-pulse-strong {
+    animation: none;
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
 }
