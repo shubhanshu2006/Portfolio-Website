@@ -13,7 +13,7 @@ import Skills from "../sections/Skills";
 import Work from "../sections/Work";
 import Education from "../sections/Education";
 import Projects from "../sections/Projects";
-import Achievements from "../sections/Achievements";
+// import Achievements from "../sections/Achievements";
 import Hackathons from "../sections/Hackathons";
 import Contact from "../sections/Contact";
 import CustomCursor from "../components/CustomCursor";
@@ -47,7 +47,7 @@ export default function Portfolio() {
         <Skills />
         <Work />
         <Education />
-        <Achievements />
+        {/* <Achievements /> */}
         <Hackathons />
         <Projects />
         <GitHubStats />

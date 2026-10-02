@@ -16,14 +16,17 @@ import {
   SiPostgresql,
   SiPostman,
   SiFramer,
-  SiKubernetes,
+  SiGithubactions,
   SiDocker,
   SiShadcnui,
   SiGithub,
-  SiApachekafka,
   SiRabbitmq,
   SiWebrtc,
   SiRedux,
+  SiSocketdotio,
+  SiLangchain,
+  SiOpenai,
+  SiHuggingface,
 } from "react-icons/si";
 import { FaLock } from "react-icons/fa";
 import {
@@ -33,16 +36,48 @@ import {
   LuMessageCircle,
   LuHandshake,
   LuNetwork,
+  LuBot,
+  LuBrainCircuit,
 } from "react-icons/lu";
-import { TbApi, TbPlugConnected } from "react-icons/tb";
+import { TbApi, TbPlugConnected, TbSql } from "react-icons/tb";
+import { VscVscode } from "react-icons/vsc";
 import {
   Users,
   LayoutTemplate,
   Server,
   Terminal,
   Database,
-  Wrench,
+  Bot,
 } from "lucide-react";
+
+function SiGroq({ className }) {
+  return (
+    <svg
+      viewBox="0 0 209.604012 304.704012"
+      fill="currentColor"
+      className={className || "w-4 h-4"}
+      width="1em"
+      height="1em"
+    >
+      <path d="M105.304012.00401184C47.7040118-.49598816.50401184 45.8040118.00401184 103.404012c-.5 57.6 45.79999996 104.8 103.40000016 105.3h36.2v-39.1h-34.3c-36.0000002.4-65.6000002-28.4-66.0000002-64.5-.4-36.1000002 28.4-65.6000002 64.5000002-66.0000002h1.5c36 0 65.2 29.2 65.4 65.2000002v96.1c0 35.7-29.1 64.8-64.7 65.2-17.1000002-.1-33.4000002-7-45.4000002-19.1l-27.7 27.7c19.2 19.3 45.2 30.3 72.4000002 30.5h1.4c56.9-.8 102.6-47 102.9-103.9v-99.1c-1.4-56.5000002-47.7-101.60000016-104.3-101.70000016Z" />
+    </svg>
+  );
+}
+
+function SiLanggraph({ className }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className || "w-4 h-4"}
+      width="1em"
+      height="1em"
+    >
+      <path d="M5 19H10A5 5 0 115 14ZM19 14A5 5 0 1114 19H19ZM10 5A5 5 0 105 10V5ZM19 5V10A5 5 0 1014 5Z" />
+    </svg>
+  );
+}
 
 const sections = [
   {
@@ -70,6 +105,45 @@ const sections = [
       { name: "REST API", icon: TbApi, color: "text-orange-400" },
       { name: "JWT Authentication", icon: FaLock, color: "text-emerald-400" },
       { name: "Web Sockets", icon: TbPlugConnected, color: "text-cyan-400" },
+      {
+        name: "Socket.io",
+        icon: SiSocketdotio,
+        color: "text-black dark:text-white",
+      },
+    ],
+  },
+  {
+    title: "Databases & Tools",
+    icon: Database,
+    skills: [
+      { name: "SQL", icon: TbSql, color: "text-sky-500" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-500" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
+      { name: "VS Code", icon: VscVscode, color: "text-blue-500" },
+      { name: "Git", icon: SiGit, color: "text-orange-500" },
+      {
+        name: "GitHub",
+        icon: SiGithub,
+        color: "text-gray-800 dark:text-gray-200",
+      },
+      { name: "Postman", icon: SiPostman, color: "text-orange-400" },
+    ],
+  },
+  {
+    title: "Gen AI & Agentic AI",
+    icon: Bot,
+    skills: [
+      { name: "LangChain", icon: SiLangchain, color: "text-emerald-500" },
+      { name: "LangGraph", icon: SiLanggraph, color: "text-cyan-500" },
+      {
+        name: "OpenAI",
+        icon: SiOpenai,
+        color: "text-emerald-600 dark:text-emerald-400",
+      },
+      { name: "Groq", icon: SiGroq, color: "text-orange-500" },
+      { name: "AI Agents", icon: LuBot, color: "text-purple-400" },
+      { name: "RAG & Workflows", icon: LuBrainCircuit, color: "text-cyan-400" },
+      { name: "Hugging Face", icon: SiHuggingface, color: "text-yellow-400" },
     ],
   },
   {
@@ -83,33 +157,11 @@ const sections = [
     ],
   },
   {
-    title: "Databases and Caching",
-    icon: Database,
-    skills: [
-      { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-500" },
-      { name: "Redis", icon: SiRedis, color: "text-red-500" },
-    ],
-  },
-  {
-    title: "Development Tools",
-    icon: Wrench,
-    skills: [
-      { name: "Git", icon: SiGit, color: "text-orange-500" },
-      {
-        name: "GitHub",
-        icon: SiGithub,
-        color: "text-gray-800 dark:text-gray-200",
-      },
-      { name: "Postman", icon: SiPostman, color: "text-orange-400" },
-    ],
-  },
-  {
     title: "DevOps and Cloud",
     icon: LuCloudCog,
     skills: [
       { name: "Docker", icon: SiDocker, color: "text-blue-500" },
-      { name: "Kubernetes", icon: SiKubernetes, color: "text-blue-500" },
+      { name: "GitHub Actions", icon: SiGithubactions, color: "text-blue-500" },
       { name: "AWS", icon: SiAmazonwebservices, color: "text-orange-400" },
     ],
   },
@@ -117,9 +169,9 @@ const sections = [
     title: "Distributed Systems",
     icon: LuNetwork,
     skills: [
-      { name: "Kafka", icon: SiApachekafka, color: "text-orange-600" },
       { name: "RabbitMQ", icon: SiRabbitmq, color: "text-orange-500" },
       { name: "BullMQ", icon: LuWorkflow, color: "text-red-500" },
+      { name: "Redis", icon: SiRedis, color: "text-red-500" },
       { name: "WebRTC", icon: SiWebrtc, color: "text-blue-500" },
     ],
   },
