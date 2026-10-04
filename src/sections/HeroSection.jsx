@@ -16,6 +16,11 @@ import {
   Download,
   Sparkles,
 } from "lucide-react";
+import {
+  triggerKnightThemeTransition,
+  preloadKnightImages,
+  preloadKnightAudio,
+} from "../utils/knightThemeTransition";
 
 export default function HeroSection() {
   const [showSocials, setShowSocials] = useState(false);
@@ -32,11 +37,14 @@ export default function HeroSection() {
       document.documentElement.classList.add("dark");
     }
 
+    // Warm up the knight sprite assets
+    preloadKnightImages();
+
     const t = setTimeout(() => setShowSocials(true), 400);
     return () => clearTimeout(t);
   }, []);
 
-  const toggleTheme = (event) => {
+  const toggleTheme = () => {
     const html = document.documentElement;
     const goingDark = !html.classList.contains("dark");
 
@@ -50,39 +58,7 @@ export default function HeroSection() {
       }
     };
 
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (!document.startViewTransition || reduceMotion) {
-      applyTheme();
-      return;
-    }
-
-    const x = event?.clientX ?? window.innerWidth / 2;
-    const y = event?.clientY ?? window.innerHeight / 2;
-    const endRadius = Math.hypot(
-      Math.max(x, window.innerWidth - x),
-      Math.max(y, window.innerHeight - y),
-    );
-
-    const transition = document.startViewTransition(applyTheme);
-
-    transition.ready.then(() => {
-      html.animate(
-        {
-          clipPath: [
-            `circle(0px at ${x}px ${y}px)`,
-            `circle(${endRadius}px at ${x}px ${y}px)`,
-          ],
-        },
-        {
-          duration: 650,
-          easing: "ease-in-out",
-          pseudoElement: "::view-transition-new(root)",
-        },
-      );
-    });
+    triggerKnightThemeTransition(applyTheme, goingDark);
   };
 
   return (
@@ -312,6 +288,8 @@ export default function HeroSection() {
 
           <button
             onClick={toggleTheme}
+            onMouseEnter={preloadKnightAudio}
+            onFocus={preloadKnightAudio}
             className="social-item hover:scale-110 hover:-translate-y-1 transition-transform"
             data-label="Theme"
           >

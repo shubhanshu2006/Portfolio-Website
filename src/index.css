@@ -882,16 +882,146 @@ body {
   }
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
+/* ==========================================================================
+   Knight Sword Cut Theme Transition Styles
+   ========================================================================== */
+html[data-vt]::view-transition-old(root) {
+  animation: vt-hold var(--vt-total, 1.48s) linear both;
   mix-blend-mode: normal;
 }
 
-::view-transition-old(root) {
-  z-index: 1;
+html[data-vt]::view-transition-new(root) {
+  z-index: 2;
+  animation: vt-hold var(--vt-total, 1.48s) linear both;
+  mix-blend-mode: normal;
 }
 
-::view-transition-new(root) {
-  z-index: 9999;
+@keyframes vt-hold {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
+
+.vt-fx {
+  z-index: 99999;
+  pointer-events: none;
+  view-transition-name: vt-fx;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+html[data-vt]::view-transition-group(vt-fx) {
+  z-index: 999999;
+  animation: none;
+}
+
+html[data-vt]::view-transition-new(vt-fx) {
+  animation: vt-hold var(--vt-total, 1.48s) linear both;
+}
+
+.rider {
+  pointer-events: none;
+  --ink: #1d140d;
+  --body: #2c20184d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.rider b {
+  position: absolute;
+  inset: 0;
+  will-change: mask-position, -webkit-mask-position;
+}
+
+.rider .k-line {
+  background: var(--ink);
+  -webkit-mask: url(/knight-lines.webp) 0 0/1400% 100% no-repeat;
+  mask: url(/knight-lines.webp) 0 0/1400% 100% no-repeat;
+}
+
+.rider .k-fill {
+  background: var(--body);
+  -webkit-mask: url(/knight-fill.webp) 0 0/1400% 100% no-repeat;
+  mask: url(/knight-fill.webp) 0 0/1400% 100% no-repeat;
+}
+
+.rider.is-echo1 b {
+  opacity: 0.32;
+}
+
+.rider.is-echo2 b {
+  opacity: 0.12;
+}
+
+/* Shadow Rider: Light -> Dark */
+.vt-fx.is-shadow .rider {
+  --ink: #150f0b;
+  --body: rgba(25, 17, 12, 0.45);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+}
+
+.vt-fx.is-shadow .rider .k-line {
+  background: #150f0b;
+}
+
+/* Gold Rider: Dark -> Light */
+.vt-fx.is-gold .rider {
+  --ink: #e9c078;
+  --body: rgba(232, 192, 112, 0.18);
+  filter: drop-shadow(0 0 8px rgba(236, 190, 110, 0.6))
+    drop-shadow(0 0 22px rgba(255, 180, 50, 0.4));
+}
+
+.vt-fx.is-gold .rider .k-line {
+  background: linear-gradient(
+    135deg,
+    #fff4d4,
+    #f6dc9c 45%,
+    #e2b35e 75%,
+    #c08a3a
+  );
+}
+
+/* Sword Cutting Seam & Lingering Cut Scar */
+.vt-seam,
+.vt-scar {
+  transform-origin: 50% 50%;
+  height: 2px;
+  margin-top: -1px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.vt-fx.is-shadow .vt-seam {
+  background: #1a120b;
+  box-shadow:
+    0 0 12px 2px rgba(214, 140, 80, 0.65),
+    0 0 24px rgba(255, 100, 20, 0.45);
+}
+
+.vt-fx.is-gold .vt-seam {
+  background: #fff8eb;
+  box-shadow:
+    0 0 14px 3px rgba(236, 176, 100, 0.8),
+    0 0 28px rgba(255, 215, 130, 0.55);
+}
+
+.vt-scar {
+  z-index: 99998;
+  height: 1.5px;
+  position: fixed;
+  background: rgba(246, 240, 228, 0.45);
+  box-shadow: 0 0 8px rgba(255, 200, 100, 0.35);
+}
+
+html.dark .vt-scar {
+  background: rgba(246, 240, 228, 0.35);
+  box-shadow: 0 0 8px rgba(255, 200, 100, 0.3);
+}
+
