@@ -61,9 +61,9 @@ export default function Loader({ onLoadComplete = () => {} }) {
                     : "opacity-0 scale-110 translate-y-12 blur-sm")
                 }
               >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-linear-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent tracking-wide">
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-linear-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent tracking-wide">
                   {n.text}
-                </h1>
+                </span>
               </div>
             ))}
           </div>

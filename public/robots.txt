@@ -1,0 +1,6 @@
+# Allow all search engine bots
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://shubhanshu10.me/sitemap.xml

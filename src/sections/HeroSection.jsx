@@ -93,7 +93,7 @@ export default function HeroSection() {
               <div className="w-full h-full rounded-full overflow-hidden relative">
                 <img
                   src="/Picture.jpeg"
-                  alt="Shubhanshu Singh"
+                  alt="Shubhanshu Singh - Full-Stack Developer & Software Engineer"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
               </div>
