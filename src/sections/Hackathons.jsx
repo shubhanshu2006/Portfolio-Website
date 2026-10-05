@@ -3,9 +3,17 @@ import { motion as Motion } from "framer-motion";
 import { Camera } from "lucide-react";
 
 export default function Hackathons() {
-  const row1 = ["/India_Innovates_1.jpeg", "/India_Innovates_3.jpeg"];
+  const row1 = [
+    "/India_Innovates_3.jpeg",
+    "Binary2.png",
+    "India_Innovates_1.jpeg",
+  ];
 
-  const row2 = ["India_Innovates_2.jpeg", "RIFT_1.jpeg"];
+  const row2 = [
+    "India_Innovates_2.jpeg",
+    "RIFT_1.jpeg",
+    "Binary4.jpeg",
+  ];
 
   return (
     <section
